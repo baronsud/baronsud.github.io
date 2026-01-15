@@ -1,8 +1,90 @@
 <!DOCTYPE html>
-<html>
-<head><title>Meu Portfólio</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baronsud Mobile | Memorize Art</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --accent-color: #38bdf8;
+            --card-bg: #1e293b;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+        h2 {
+            font-weight: 300;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+        .project-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .badge {
+            background: var(--accent-color);
+            color: var(--bg-color);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        .footer {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            opacity: 0.5;
+        }
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
 <body>
-    <h1>Bem-vindo ao meu site, queridão!</h1>
-    <p>Site hospedado no GitHub Pages.</p>
+    <div class="container">
+        <h1>Baronsud Mobile</h1>
+        <h2>Premium Android Development</h2>
+
+        <div class="project-card">
+            <span class="badge">LATEST RELEASE</span>
+            <h3>Memorize Art</h3>
+            <p>A sophisticated memory challenge for art lovers. Built with Kotlin, featuring a custom theme engine and seamless monetization.</p>
+            <p><i>Coming soon to Google Play Store.</i></p>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 Baronsud Mobile. All rights reserved.<br>
+            Contact: <a href="mailto:support@baronsud.com">support@baronsud.com</a>
+        </div>
+    </div>
 </body>
 </html>
