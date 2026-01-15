@@ -26,4 +26,4 @@ The Premium upgrade provides:
 ## 📄 License
 This project is developed and maintained by **Baronsud Mobile**. All rights reserved.
 
-📩 **Support:** [Your support email here]
+📩 **Support:** baronsud@proton.me
