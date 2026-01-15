@@ -6,7 +6,6 @@
     <title>Baronsud Mobile | Memorize Art</title>
     <style>
         :root {
-            /* Fundo Slate Gray (mais claro e moderno) */
             --bg-color: #1e293b;      
             --text-color: #f1f5f9;    
             --accent-color: #a78bfa;  
@@ -23,62 +22,16 @@
             min-height: 100vh;
             text-align: center;
         }
-        .container {
-            max-width: 800px;
-            padding: 2rem;
-        }
-        /* ESTILO LOGO: Colando as linhas */
-        .logo-container {
-            margin-bottom: 2rem;
-        }
-        .logo-main {
-            font-size: 4rem;
-            font-weight: 800;
-            line-height: 0.8; /* Puxa a linha de baixo para cima */
-            margin: 0;
-            color: var(--accent-color);
-            letter-spacing: -2px;
-        }
-        .logo-sub {
-            font-size: 2.5rem;
-            font-weight: 300;
-            line-height: 1;
-            margin: 0;
-            opacity: 0.9;
-            letter-spacing: 2px;
-        }
-        h2.tagline {
-            font-weight: 300;
-            opacity: 0.6;
-            margin-top: 1rem;
-            margin-bottom: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-size: 0.8rem;
-        }
-        .project-card {
-            background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .badge {
-            background: var(--accent-color);
-            color: var(--bg-color);
-            padding: 0.3rem 1rem;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-        }
+        .container { max-width: 800px; padding: 2rem; }
+        .logo-container { margin-bottom: 2rem; }
+        .logo-main { font-size: 4rem; font-weight: 800; line-height: 0.8; margin: 0; color: var(--accent-color); letter-spacing: -2px; }
+        .logo-sub { font-size: 2.5rem; font-weight: 300; line-height: 1; margin: 0; opacity: 0.9; letter-spacing: 2px; }
+        h2.tagline { font-weight: 300; opacity: 0.6; margin-top: 1rem; margin-bottom: 2.5rem; text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem; }
+        .project-card { background: var(--card-bg); padding: 2.5rem; border-radius: 20px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255,255,255,0.1); }
+        .badge { background: var(--accent-color); color: var(--bg-color); padding: 0.3rem 1rem; border-radius: 50px; font-weight: bold; font-size: 0.75rem; text-transform: uppercase; }
         h3 { font-size: 1.8rem; margin-top: 1.5rem; }
         p { line-height: 1.6; font-size: 1.1rem; opacity: 0.9; }
-        .footer {
-            margin-top: 4rem;
-            font-size: 0.85rem;
-            opacity: 0.5;
-        }
+        .footer { margin-top: 4rem; font-size: 0.85rem; opacity: 0.5; }
         a { color: var(--accent-color); text-decoration: none; font-weight: bold; }
         a:hover { text-decoration: underline; }
     </style>
@@ -90,20 +43,58 @@
             <p class="logo-sub">Mobile</p>
         </div>
         
-        <h2 class="tagline">Premium Android Development</h2>
+        <h2 id="tagline" class="tagline">Premium Android Development</h2>
 
         <div class="project-card">
-            <span class="badge">Latest Release</span>
+            <span id="badge" class="badge">Latest Release</span>
             <h3>Memorize Art</h3>
-            <p>A sophisticated memory challenge for art lovers. Built with Kotlin, featuring a custom theme engine and seamless monetization.</p>
-            <p style="font-size: 0.9rem; margin-top: 20px;"><i>Coming soon to Google Play Store.</i></p>
+            <p id="description">A memory challenge for art lovers. Built with Kotlin, featuring a custom theme engine and seamless monetization.</p>
+            <p id="status" style="font-size: 0.9rem; margin-top: 20px;"><i>Coming soon to Google Play Store.</i></p>
         </div>
 
         <div class="footer">
             &copy; 2026 Baronsud Mobile. All rights reserved.<br>
             Contact: <a href="mailto:baronsud@proton.me">baronsud@proton.me</a> | 
-            <a href="privacy.html">Privacy Policy</a>
+            <a href="privacy.html" id="privacy-link">Privacy Policy</a>
         </div>
     </div>
+
+    <script>
+        const translations = {
+            'pt': {
+                tagline: "Desenvolvimento Android Premium",
+                badge: "Lançamento",
+                description: "Um desafio de memória para amantes da arte. Desenvolvido em Kotlin, com motor de temas customizado e monetização fluida.",
+                status: "Em breve na Google Play Store.",
+                privacy: "Política de Privacidade"
+            },
+            'en': {
+                tagline: "Premium Android Development",
+                badge: "Latest Release",
+                description: "A memory challenge for art lovers. Built with Kotlin, featuring a custom theme engine and seamless monetization.",
+                status: "Coming soon to Google Play Store.",
+                privacy: "Privacy Policy"
+            },
+            'es': {
+                tagline: "Desarrollo Android Premium",
+                badge: "Último Lanzamiento",
+                description: "Un desafío de memoria para amantes del arte. Creado con Kotlin, motor de temas personalizado y monetización fluida.",
+                status: "Próximamente en Google Play Store.",
+                privacy: "Política de Privacidad"
+            }
+            // Você pode adicionar 'fr', 'ja', 'zh' aqui depois
+        };
+
+        // Detecta o idioma (ex: 'pt-BR' vira 'pt')
+        const userLang = navigator.language.split('-')[0];
+        const lang = translations[userLang] ? userLang : 'en';
+
+        // Aplica as traduções
+        document.getElementById('tagline').innerText = translations[lang].tagline;
+        document.getElementById('badge').innerText = translations[lang].badge;
+        document.getElementById('description').innerText = translations[lang].description;
+        document.getElementById('status').innerHTML = `<i>${translations[lang].status}</i>`;
+        document.getElementById('privacy-link').innerText = translations[lang].privacy;
+    </script>
 </body>
 </html>
