@@ -17,33 +17,83 @@
             color: var(--text-color);
             margin: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             min-height: 100vh;
             text-align: center;
         }
-        .container { max-width: 800px; padding: 2rem; }
+        /* Language Switcher Style */
+        .lang-switcher {
+            margin-top: 1.5rem;
+            padding: 0.5rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50px;
+            display: flex;
+            gap: 5px;
+        }
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            opacity: 0.5;
+            transition: 0.3s;
+            border-radius: 50px;
+        }
+        .lang-btn.active { 
+            opacity: 1; 
+            background: var(--accent-color); 
+            color: var(--bg-color);
+            font-weight: bold; 
+        }
+        .lang-btn:hover { opacity: 1; }
+
+        .container { max-width: 800px; padding: 2rem; margin: auto; }
         .logo-container { margin-bottom: 2rem; }
         .logo-main { font-size: 4rem; font-weight: 800; line-height: 0.8; margin: 0; color: var(--accent-color); letter-spacing: -2px; }
         .logo-sub { font-size: 2.5rem; font-weight: 300; line-height: 1; margin: 0; opacity: 0.9; letter-spacing: 2px; }
-        h2.tagline { font-weight: 300; opacity: 0.6; margin-top: 1rem; margin-bottom: 2.5rem; text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem; }
-        .project-card { background: var(--card-bg); padding: 2.5rem; border-radius: 20px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255,255,255,0.1); }
+        
+        h2.tagline { 
+            font-weight: 300; 
+            opacity: 0.6; 
+            margin-top: 1.5rem; 
+            margin-bottom: 2.5rem; 
+            text-transform: uppercase; 
+            letter-spacing: 4px; 
+            font-size: 0.85rem; 
+        }
+        
+        .project-card { 
+            background: var(--card-bg); 
+            padding: 2.5rem; 
+            border-radius: 20px; 
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255,255,255,0.1); 
+        }
         .badge { background: var(--accent-color); color: var(--bg-color); padding: 0.3rem 1rem; border-radius: 50px; font-weight: bold; font-size: 0.75rem; text-transform: uppercase; }
         h3 { font-size: 1.8rem; margin-top: 1.5rem; }
         p { line-height: 1.6; font-size: 1.1rem; opacity: 0.9; }
-        .footer { margin-top: 4rem; font-size: 0.85rem; opacity: 0.5; }
+        .footer { margin-top: 4rem; font-size: 0.85rem; opacity: 0.5; padding-bottom: 2rem;}
         a { color: var(--accent-color); text-decoration: none; font-weight: bold; }
-        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
+
+    <div class="lang-switcher">
+        <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
+        <button class="lang-btn" onclick="setLanguage('pt')" id="btn-pt">PT</button>
+        <button class="lang-btn" onclick="setLanguage('es')" id="btn-es">ES</button>
+    </div>
+
     <div class="container">
         <div class="logo-container">
             <p class="logo-main">Baronsud</p>
             <p class="logo-sub">Mobile</p>
         </div>
         
-        <h2 id="tagline" class="tagline">Premium Android Development</h2>
+        <h2 id="tagline" class="tagline">Android Development</h2>
 
         <div class="project-card">
             <span id="badge" class="badge">Latest Release</span>
@@ -61,40 +111,46 @@
 
     <script>
         const translations = {
-            'pt': {
-                tagline: "Desenvolvimento Android Premium",
-                badge: "Lançamento",
-                description: "Um desafio de memória para amantes da arte. Desenvolvido em Kotlin, com motor de temas customizado e monetização fluida.",
-                status: "Em breve na Google Play Store.",
-                privacy: "Política de Privacidade"
+            'pt': { 
+                tagline: "Android Development", 
+                badge: "Lançamento", 
+                description: "Um desafio de memória para amantes da arte. Desenvolvido em Kotlin, com motor de temas customizado e monetização fluida.", 
+                status: "Em breve na Google Play Store.", 
+                privacy: "Política de Privacidade" 
             },
-            'en': {
-                tagline: "Premium Android Development",
-                badge: "Latest Release",
-                description: "A memory challenge for art lovers. Built with Kotlin, featuring a custom theme engine and seamless monetization.",
-                status: "Coming soon to Google Play Store.",
-                privacy: "Privacy Policy"
+            'en': { 
+                tagline: "Android Development", 
+                badge: "Latest Release", 
+                description: "A memory challenge for art lovers. Built with Kotlin, featuring a custom theme engine and seamless monetization.", 
+                status: "Coming soon to Google Play Store.", 
+                privacy: "Privacy Policy" 
             },
-            'es': {
-                tagline: "Desarrollo Android Premium",
-                badge: "Último Lanzamiento",
-                description: "Un desafío de memoria para amantes del arte. Creado con Kotlin, motor de temas personalizado y monetización fluida.",
-                status: "Próximamente en Google Play Store.",
-                privacy: "Política de Privacidad"
+            'es': { 
+                tagline: "Android Development", 
+                badge: "Último Lanzamiento", 
+                description: "Un desafío de memoria para amantes del arte. Creado con Kotlin, motor de temas personalizado y monetización fluida.", 
+                status: "Próximamente en Google Play Store.", 
+                privacy: "Política de Privacidad" 
             }
-            // Você pode adicionar 'fr', 'ja', 'zh' aqui depois
         };
 
-        // Detecta o idioma (ex: 'pt-BR' vira 'pt')
-        const userLang = navigator.language.split('-')[0];
-        const lang = translations[userLang] ? userLang : 'en';
+        function setLanguage(lang) {
+            // Update Texts
+            document.getElementById('tagline').innerText = translations[lang].tagline;
+            document.getElementById('badge').innerText = translations[lang].badge;
+            document.getElementById('description').innerText = translations[lang].description;
+            document.getElementById('status').innerHTML = `<i>${translations[lang].status}</i>`;
+            document.getElementById('privacy-link').innerText = translations[lang].privacy;
 
-        // Aplica as traduções
-        document.getElementById('tagline').innerText = translations[lang].tagline;
-        document.getElementById('badge').innerText = translations[lang].badge;
-        document.getElementById('description').innerText = translations[lang].description;
-        document.getElementById('status').innerHTML = `<i>${translations[lang].status}</i>`;
-        document.getElementById('privacy-link').innerText = translations[lang].privacy;
+            // Update Button UI
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-' + lang).classList.add('active');
+        }
+
+        // Auto-detect browser language on load
+        const userLang = navigator.language.split('-')[0];
+        const defaultLang = translations[userLang] ? userLang : 'en';
+        setLanguage(defaultLang);
     </script>
 </body>
 </html>
