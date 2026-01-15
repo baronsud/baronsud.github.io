@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baronsud Mobile</title>
+    <title>Baronsud Mobile | Memorize Art</title>
     <style>
         :root {
-        --bg-color: #06120e;      /* Verde quase preto */
-        --text-color: #ecfdf5;    /* Branco esmeralda */
-        --accent-color: #10b981;  /* Verde vibrante */
-        --card-bg: #064e3b;       /* Verde floresta profundo */
-    }
+            /* Fundo Slate Gray (mais claro e moderno) */
+            --bg-color: #1e293b;      
+            --text-color: #f1f5f9;    
+            --accent-color: #a78bfa;  
+            --card-bg: #334155;       
+        }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
@@ -26,64 +27,82 @@
             max-width: 800px;
             padding: 2rem;
         }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent-color);
-        }
-        h2 {
-            font-weight: 300;
-            opacity: 0.8;
+        /* ESTILO LOGO: Colando as linhas */
+        .logo-container {
             margin-bottom: 2rem;
+        }
+        .logo-main {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 0.8; /* Puxa a linha de baixo para cima */
+            margin: 0;
+            color: var(--accent-color);
+            letter-spacing: -2px;
+        }
+        .logo-sub {
+            font-size: 2.5rem;
+            font-weight: 300;
+            line-height: 1;
+            margin: 0;
+            opacity: 0.9;
+            letter-spacing: 2px;
+        }
+        h2.tagline {
+            font-weight: 300;
+            opacity: 0.6;
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.8rem;
         }
         .project-card {
             background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255,255,255,0.1);
         }
         .badge {
             background: var(--accent-color);
             color: var(--bg-color);
-            padding: 0.2rem 0.8rem;
-            border-radius: 20px;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
             font-weight: bold;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
         }
-        p {
-            line-height: 1.6;
-            font-size: 1.1rem;
-        }
+        h3 { font-size: 1.8rem; margin-top: 1.5rem; }
+        p { line-height: 1.6; font-size: 1.1rem; opacity: 0.9; }
         .footer {
-            margin-top: 3rem;
-            font-size: 0.9rem;
+            margin-top: 4rem;
+            font-size: 0.85rem;
             opacity: 0.5;
         }
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+        a { color: var(--accent-color); text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Baronsud</h1>
-        <h2>Mobile</h2>
+        <div class="logo-container">
+            <p class="logo-main">Baronsud</p>
+            <p class="logo-sub">Mobile</p>
+        </div>
+        
+        <h2 class="tagline">Premium Android Development</h2>
 
         <div class="project-card">
-            <span class="badge">LATEST RELEASE</span>
+            <span class="badge">Latest Release</span>
             <h3>Memorize Art</h3>
             <p>A sophisticated memory challenge for art lovers. Built with Kotlin, featuring a custom theme engine and seamless monetization.</p>
-            <p><i>Coming soon to Google Play Store.</i></p>
+            <p style="font-size: 0.9rem; margin-top: 20px;"><i>Coming soon to Google Play Store.</i></p>
         </div>
 
         <div class="footer">
             &copy; 2026 Baronsud Mobile. All rights reserved.<br>
-            Contact: <a href="mailto:baronsud@proton.me">baronsud@proton.me</a>
+            Contact: <a href="mailto:baronsud@proton.me">baronsud@proton.me</a> | 
+            <a href="privacy.html">Privacy Policy</a>
         </div>
     </div>
 </body>
