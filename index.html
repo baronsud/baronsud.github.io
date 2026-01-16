@@ -13,7 +13,7 @@
             --card-bg: #334155;       
         }
         body {
-            font-family: 'Montserrat', sans-serif; /* Fonte alterada */
+            font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
@@ -43,46 +43,13 @@
             border-radius: 50px;
             font-family: 'Montserrat', sans-serif;
         }
-        .lang-btn.active { 
-            opacity: 1; 
-            background: var(--accent-color); 
-            color: var(--bg-color);
-            font-weight: bold; 
-        }
-        .lang-btn:hover { opacity: 1; }
-
+        .lang-btn.active { opacity: 1; background: var(--accent-color); color: var(--bg-color); font-weight: bold; }
+        
         .container { max-width: 800px; padding: 2rem; margin: auto; }
-        .logo-container { margin-bottom: 2rem; }
+        .logo-main { font-size: 4rem; font-weight: 800; line-height: 0.8; margin: 0; color: var(--accent-color); letter-spacing: -2px; text-transform: uppercase; }
+        .logo-sub { font-size: 2.5rem; font-weight: 300; line-height: 1; margin: 0; opacity: 0.9; letter-spacing: 2px; text-transform: uppercase; }
         
-        /* Estilização Caps Lock para o Logo */
-        .logo-main { 
-            font-size: 4rem; 
-            font-weight: 800; 
-            line-height: 0.8; 
-            margin: 0; 
-            color: var(--accent-color); 
-            letter-spacing: -2px; 
-            text-transform: uppercase; 
-        }
-        .logo-sub { 
-            font-size: 2.5rem; 
-            font-weight: 300; 
-            line-height: 1; 
-            margin: 0; 
-            opacity: 0.9; 
-            letter-spacing: 2px; 
-            text-transform: uppercase; 
-        }
-        
-        h2.tagline { 
-            font-weight: 300; 
-            opacity: 0.6; 
-            margin-top: 1.5rem; 
-            margin-bottom: 2.5rem; 
-            text-transform: uppercase; 
-            letter-spacing: 4px; 
-            font-size: 0.85rem; 
-        }
+        h2.tagline { font-weight: 300; opacity: 0.6; margin-top: 1.5rem; margin-bottom: 2.5rem; text-transform: uppercase; letter-spacing: 4px; font-size: 0.85rem; }
         
         .project-card { 
             background: var(--card-bg); 
@@ -90,11 +57,18 @@
             border-radius: 20px; 
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255,255,255,0.1); 
+            text-align: left; /* Alinhado à esquerda para os checks ficarem organizados */
         }
-        .badge { background: var(--accent-color); color: var(--bg-color); padding: 0.3rem 1rem; border-radius: 50px; font-weight: bold; font-size: 0.75rem; text-transform: uppercase; }
-        h3 { font-size: 1.8rem; margin-top: 1.5rem; }
-        p { line-height: 1.6; font-size: 1.1rem; opacity: 0.9; }
-        .footer { margin-top: 4rem; font-size: 0.85rem; opacity: 0.5; padding-bottom: 2rem;}
+
+        /* Estilização da lista com Check */
+        .feature-list { list-style: none; padding: 0; margin: 1.5rem 0; }
+        .feature-list li { margin-bottom: 10px; font-size: 1.1rem; opacity: 0.9; display: flex; align-items: flex-start; }
+        .feature-list li::before { content: '✓'; color: var(--accent-color); font-weight: bold; margin-right: 12px; }
+
+        .badge { background: var(--accent-color); color: var(--bg-color); padding: 0.3rem 1rem; border-radius: 50px; font-weight: bold; font-size: 0.75rem; text-transform: uppercase; display: inline-block; }
+        h3 { font-size: 1.8rem; margin-top: 1rem; margin-bottom: 0.5rem; text-align: left;}
+        
+        .footer { margin-top: 4rem; font-size: 0.85rem; opacity: 0.5; padding-bottom: 2rem; text-align: center;}
         a { color: var(--accent-color); text-decoration: none; font-weight: bold; }
     </style>
 </head>
@@ -108,8 +82,8 @@
 
     <div class="container">
         <div class="logo-container">
-            <p class="logo-main">Baronsud</p>
-            <p class="logo-sub">Mobile</p>
+            <p class="logo-main">BARONSUD</p>
+            <p class="logo-sub">MOBILE</p>
         </div>
         
         <h2 id="tagline" class="tagline">Android Development</h2>
@@ -117,7 +91,10 @@
         <div class="project-card">
             <span id="badge" class="badge">Latest Release</span>
             <h3>Memorize Art</h3>
-            <p id="description">A memory challenge for art lovers. Built with Kotlin, featuring a custom theme engine and seamless monetization.</p>
+            
+            <ul class="feature-list" id="description-list">
+                </ul>
+
             <p id="status" style="font-size: 0.9rem; margin-top: 20px;"><i>Coming soon to Google Play Store.</i></p>
         </div>
 
@@ -132,32 +109,51 @@
             'pt': { 
                 tagline: "Desenvolvimento Android", 
                 badge: "Lançamento", 
-                description: "Um desafio de memória para amantes da arte. Desenvolvido em Kotlin, com motor de temas customizado e monetização fluida.", 
-                status: "Em breve na Google Play Store.", 
-                privacy: "Política de Privacidade" 
+                features: [
+                    "Um desafio de memória para amantes da arte.",
+                    "Desenvolvido em Kotlin.",
+                    "Motor de temas customizado.",
+                    "Monetização fluida."
+                ],
+                status: "Em breve na Google Play Store."
             },
             'en': { 
                 tagline: "Android Development", 
                 badge: "Latest Release", 
-                description: "A memory challenge for art lovers. Built with Kotlin, featuring a custom theme engine and seamless monetization.", 
-                status: "Coming soon to Google Play Store.", 
-                privacy: "Privacy Policy" 
+                features: [
+                    "A memory challenge for art lovers.",
+                    "Built with Kotlin.",
+                    "Custom theme engine.",
+                    "Seamless monetization."
+                ],
+                status: "Coming soon to Google Play Store."
             },
             'es': { 
                 tagline: "Desarrollo Android", 
                 badge: "Último Lanzamiento", 
-                description: "Un desafío de memoria para amantes del arte. Creado con Kotlin, motor de temas personalizado y monetización fluida.", 
-                status: "Próximamente en Google Play Store.", 
-                privacy: "Política de Privacidad" 
+                features: [
+                    "Un desafío de memoria para amantes del arte.",
+                    "Creado con Kotlin.",
+                    "Motor de temas personalizado.",
+                    "Monetización fluida."
+                ],
+                status: "Próximamente en Google Play Store."
             }
         };
 
         function setLanguage(lang) {
             document.getElementById('tagline').innerText = translations[lang].tagline;
             document.getElementById('badge').innerText = translations[lang].badge;
-            document.getElementById('description').innerText = translations[lang].description;
             document.getElementById('status').innerHTML = `<i>${translations[lang].status}</i>`;
-            document.getElementById('privacy-link').innerText = translations[lang].privacy;
+
+            // Atualiza a lista de frases
+            const listContainer = document.getElementById('description-list');
+            listContainer.innerHTML = '';
+            translations[lang].features.forEach(text => {
+                const li = document.createElement('li');
+                li.innerText = text;
+                listContainer.appendChild(li);
+            });
 
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById('btn-' + lang).classList.add('active');
