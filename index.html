@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baronsud Mobile</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-color: #1e293b;      
-            --text-color: #f1f5f9;    
-            --accent-color: #a78bfa;  
-            --card-bg: #334155;       
+        /* RESET OBRIGATÓRIO PARA NÃO QUEBRAR NO MOBILE */
+        * {
+            box-sizing: border-box;
         }
+
+        :root {
+            --bg-color: #0b1120;      /* Fundo "Espaço Profundo" */
+            --card-bg: #1e293b;       /* Cinza Azulado Tech */
+            --text-color: #cbd5e1;    /* Cinza Claro (Leitura suave) */
+            --accent-color: #00ff88;  /* Verde Intergalático */
+            --gold-color: #fbbf24;    /* Dourado para destaque */
+        }
+
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
@@ -22,14 +29,19 @@
             align-items: center;
             min-height: 100vh;
             text-align: center;
+            overflow-x: hidden; /* Impede rolagem lateral */
+            width: 100%;
         }
+
+        /* Seletor de Idioma */
         .lang-switcher {
             margin-top: 1.5rem;
-            padding: 0.5rem;
+            padding: 0.4rem;
             background: rgba(255,255,255,0.05);
             border-radius: 50px;
             display: flex;
             gap: 5px;
+            border: 1px solid rgba(255,255,255,0.05);
         }
         .lang-btn {
             background: none;
@@ -37,43 +49,116 @@
             color: var(--text-color);
             cursor: pointer;
             padding: 6px 12px;
-            font-size: 0.75rem;
-            opacity: 0.5;
+            font-size: 0.7rem;
+            opacity: 0.6;
             transition: 0.3s;
             border-radius: 50px;
             font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
         }
-        .lang-btn.active { opacity: 1; background: var(--accent-color); color: var(--bg-color); font-weight: bold; }
-        
-        .container { max-width: 800px; padding: 2rem; margin: auto; }
-        .logo-main { font-size: 4rem; font-weight: 800; line-height: 0.8; margin: 0; color: var(--accent-color); letter-spacing: -2px; text-transform: uppercase; }
-        .logo-sub { font-size: 2.5rem; font-weight: 300; line-height: 1; margin: 0; opacity: 0.9; letter-spacing: 2px; text-transform: uppercase; }
-        
-        h2.tagline { font-weight: 300; opacity: 0.6; margin-top: 1.5rem; margin-bottom: 2.5rem; text-transform: uppercase; letter-spacing: 4px; font-size: 0.85rem; }
-        
-        .project-card { 
-            background: var(--card-bg); 
-            padding: 2.5rem; 
-            border-radius: 20px; 
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255,255,255,0.1); 
-            text-align: center; /* Garante centralização dos blocos filhos */
+        .lang-btn.active { 
+            opacity: 1; 
+            background: var(--accent-color); 
+            color: #000000; /* Texto preto no verde para contraste */
+            font-weight: 800; 
         }
 
-        /* Ajuste fino da Lista para alinhamento visual */
+        .container { 
+            width: 100%; 
+            max-width: 800px; 
+            padding: 2rem 1.5rem; /* Ajustado padding lateral */
+            margin: auto; 
+        }
+
+        /* LOGO */
+        .logo-container { margin-bottom: 0.5rem; }
+        .logo-main { 
+            font-size: 4rem; 
+            font-weight: 800; 
+            line-height: 0.9; 
+            margin: 0; 
+            color: var(--accent-color); 
+            letter-spacing: -2px; 
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.2); /* Brilho neon sutil */
+        }
+        .logo-sub { 
+            font-size: 2.5rem; 
+            font-weight: 300; 
+            line-height: 1; 
+            margin: 0; 
+            opacity: 0.9; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            color: #ffffff;
+        }
+
+        /* SLOGAN NOVO */
+        .slogan {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--gold-color);
+            opacity: 0.8;
+            margin-top: 0.5rem;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        h2.tagline { 
+            font-weight: 300; 
+            opacity: 0.6; 
+            margin-bottom: 2rem; 
+            text-transform: uppercase; 
+            letter-spacing: 4px; 
+            font-size: 0.75rem; 
+            display: none; /* Escondi a tagline antiga para focar no slogan */
+        }
+
+        /* CARD DO PROJETO */
+        .project-card { 
+            background: var(--card-bg); 
+            padding: 2.5rem 1.5rem; 
+            border-radius: 20px; 
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255,255,255,0.05); 
+            text-align: center;
+        }
+
+        /* BADGE DOURADA */
+        .badge { 
+            background: var(--gold-color); 
+            color: #000; 
+            padding: 0.3rem 1rem; 
+            border-radius: 50px; 
+            font-weight: 800; 
+            font-size: 0.7rem; 
+            text-transform: uppercase; 
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+
+        h3 { 
+            font-size: 2rem; 
+            margin-top: 1.5rem; 
+            margin-bottom: 1rem; 
+            color: #fff;
+        }
+
+        /* LISTA DE FEATURES */
         .feature-list { 
             list-style: none; 
             padding: 0; 
             margin: 1.5rem auto; 
-            display: inline-block; /* A caixa se ajusta ao tamanho do texto */
-            text-align: left; /* Mantém o texto alinhado com o check */
+            display: inline-block; 
+            text-align: left; 
         }
         .feature-list li { 
-            margin-bottom: 10px; 
-            font-size: 1.1rem; 
+            margin-bottom: 12px; 
+            font-size: 1rem; 
             opacity: 0.9; 
             display: flex; 
-            align-items: center; 
+            align-items: flex-start; 
         }
         .feature-list li::before { 
             content: '✓'; 
@@ -83,11 +168,24 @@
             flex-shrink: 0;
         }
 
-        .badge { background: var(--accent-color); color: var(--bg-color); padding: 0.3rem 1rem; border-radius: 50px; font-weight: bold; font-size: 0.75rem; text-transform: uppercase; display: inline-block; }
-        h3 { font-size: 1.8rem; margin-top: 1rem; margin-bottom: 0.5rem; }
-        
-        .footer { margin-top: 4rem; font-size: 0.85rem; opacity: 0.5; padding-bottom: 2rem; }
-        a { color: var(--accent-color); text-decoration: none; font-weight: bold; }
+        .footer { 
+            margin-top: 4rem; 
+            font-size: 0.8rem; 
+            opacity: 0.4; 
+            padding-bottom: 2rem; 
+            line-height: 1.6;
+        }
+        a { color: var(--accent-color); text-decoration: none; font-weight: bold; transition: 0.3s; }
+        a:hover { color: var(--gold-color); }
+
+        /* AJUSTE PARA CELULAR (A mágica acontece aqui) */
+        @media (max-width: 600px) {
+            .logo-main { font-size: 2.8rem; }
+            .logo-sub { font-size: 1.8rem; }
+            .project-card { padding: 2rem 1rem; }
+            h3 { font-size: 1.6rem; }
+            .feature-list li { font-size: 0.95rem; }
+        }
     </style>
 </head>
 <body>
@@ -104,7 +202,7 @@
             <p class="logo-sub">MOBILE</p>
         </div>
         
-        <h2 id="tagline" class="tagline">Android Development</h2>
+        <p class="slogan">Simplicity is Classic.</p>
 
         <div class="project-card">
             <div><span id="badge" class="badge">Latest Release</span></div>
@@ -113,54 +211,53 @@
             <ul class="feature-list" id="description-list">
                 </ul>
 
-            <p id="status" style="font-size: 0.9rem; margin-top: 20px;"><i>Coming soon to Google Play Store.</i></p>
+            <p id="status" style="font-size: 0.9rem; margin-top: 30px; color: var(--accent-color);">
+                <i>Coming soon to Google Play Store.</i>
+            </p>
         </div>
 
         <div class="footer">
             &copy; 2026 Baronsud Mobile. All rights reserved.<br>
-            <a href="mailto:baronsud@proton.me">baronsud@proton.me</a>
+            Contact: <a href="mailto:baronsud@proton.me">baronsud@proton.me</a> | 
+            <a href="privacy.html">Privacy Policy</a>
         </div>
     </div>
 
     <script>
         const translations = {
             'pt': { 
-                tagline: "Desenvolvimento Android", 
                 badge: "Lançamento", 
                 features: [
-                    "Um desafio de memória para amantes da arte.",
-                    "Desenvolvido em Kotlin.",
-                    "Motor de temas customizado.",
-                    "Monetização fluida."
+                    "Desafio de memória para amantes da arte.",
+                    "Desenvolvido nativamente em Kotlin.",
+                    "Design minimalista e eficiente.",
+                    "Sem distrações desnecessárias."
                 ],
                 status: "Em breve na Google Play Store."
             },
             'en': { 
-                tagline: "Android Development", 
                 badge: "Latest Release", 
                 features: [
-                    "A memory challenge for art lovers.",
-                    "Built with Kotlin.",
-                    "Custom theme engine.",
-                    "Seamless monetization."
+                    "Memory challenge for art lovers.",
+                    "Built natively with Kotlin.",
+                    "Minimalist and efficient design.",
+                    "No unnecessary distractions."
                 ],
                 status: "Coming soon to Google Play Store."
             },
             'es': { 
-                tagline: "Desarrollo Android", 
                 badge: "Último Lanzamiento", 
                 features: [
-                    "Un desafío de memoria para amantes del arte.",
-                    "Creado con Kotlin.",
-                    "Motor de temas personalizado.",
-                    "Monetización fluida."
+                    "Desafío de memoria para amantes del arte.",
+                    "Creado nativamente con Kotlin.",
+                    "Diseño minimalista y eficiente.",
+                    "Sin distracciones innecesarias."
                 ],
                 status: "Próximamente en Google Play Store."
             }
         };
 
         function setLanguage(lang) {
-            document.getElementById('tagline').innerText = translations[lang].tagline;
             document.getElementById('badge').innerText = translations[lang].badge;
             document.getElementById('status').innerHTML = `<i>${translations[lang].status}</i>`;
 
