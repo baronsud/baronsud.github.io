@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baronsud Mobile</title>
+    <title>BARONSUD MOBILE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #1e293b;      
@@ -12,7 +13,7 @@
             --card-bg: #334155;       
         }
         body {
-            font-family: 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Montserrat', sans-serif; /* Fonte alterada */
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
@@ -22,7 +23,6 @@
             min-height: 100vh;
             text-align: center;
         }
-        /* Language Switcher Style */
         .lang-switcher {
             margin-top: 1.5rem;
             padding: 0.5rem;
@@ -41,6 +41,7 @@
             opacity: 0.5;
             transition: 0.3s;
             border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
         }
         .lang-btn.active { 
             opacity: 1; 
@@ -52,8 +53,26 @@
 
         .container { max-width: 800px; padding: 2rem; margin: auto; }
         .logo-container { margin-bottom: 2rem; }
-        .logo-main { font-size: 4rem; font-weight: 800; line-height: 0.8; margin: 0; color: var(--accent-color); letter-spacing: -2px; }
-        .logo-sub { font-size: 2.5rem; font-weight: 300; line-height: 1; margin: 0; opacity: 0.9; letter-spacing: 2px; }
+        
+        /* Estilização Caps Lock para o Logo */
+        .logo-main { 
+            font-size: 4rem; 
+            font-weight: 800; 
+            line-height: 0.8; 
+            margin: 0; 
+            color: var(--accent-color); 
+            letter-spacing: -2px; 
+            text-transform: uppercase; 
+        }
+        .logo-sub { 
+            font-size: 2.5rem; 
+            font-weight: 300; 
+            line-height: 1; 
+            margin: 0; 
+            opacity: 0.9; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+        }
         
         h2.tagline { 
             font-weight: 300; 
@@ -103,15 +122,16 @@
         </div>
 
         <div class="footer">
-            &copy; 2026 Baronsud Mobile. All rights reserved.<br>
-            <a href="mailto:baronsud@proton.me">baronsud@proton.me</a>
+            &copy; 2026 BARONSUD MOBILE. All rights reserved.<br>
+            <a href="mailto:baronsud@proton.me">baronsud@proton.me</a> | 
+            <a href="#" id="privacy-link">Privacy Policy</a>
         </div>
     </div>
 
     <script>
         const translations = {
             'pt': { 
-                tagline: "Android Development", 
+                tagline: "Desenvolvimento Android", 
                 badge: "Lançamento", 
                 description: "Um desafio de memória para amantes da arte. Desenvolvido em Kotlin, com motor de temas customizado e monetização fluida.", 
                 status: "Em breve na Google Play Store.", 
@@ -125,7 +145,7 @@
                 privacy: "Privacy Policy" 
             },
             'es': { 
-                tagline: "Android Development", 
+                tagline: "Desarrollo Android", 
                 badge: "Último Lanzamiento", 
                 description: "Un desafío de memoria para amantes del arte. Creado con Kotlin, motor de temas personalizado y monetización fluida.", 
                 status: "Próximamente en Google Play Store.", 
@@ -134,19 +154,16 @@
         };
 
         function setLanguage(lang) {
-            // Update Texts
             document.getElementById('tagline').innerText = translations[lang].tagline;
             document.getElementById('badge').innerText = translations[lang].badge;
             document.getElementById('description').innerText = translations[lang].description;
             document.getElementById('status').innerHTML = `<i>${translations[lang].status}</i>`;
             document.getElementById('privacy-link').innerText = translations[lang].privacy;
 
-            // Update Button UI
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById('btn-' + lang).classList.add('active');
         }
 
-        // Auto-detect browser language on load
         const userLang = navigator.language.split('-')[0];
         const defaultLang = translations[userLang] ? userLang : 'en';
         setLanguage(defaultLang);
