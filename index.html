@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baronsud Mobile</title>
+    <title>BARONSUD MOBILE</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -57,16 +57,17 @@
             border-radius: 20px; 
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255,255,255,0.1); 
-            text-align: left; /* Alinhado à esquerda para os checks ficarem organizados */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza os itens dentro do card */
         }
 
-        /* Estilização da lista com Check */
-        .feature-list { list-style: none; padding: 0; margin: 1.5rem 0; }
+        .feature-list { list-style: none; padding: 0; margin: 1.5rem 0; text-align: left; align-self: stretch; max-width: 400px; margin-left: auto; margin-right: auto; }
         .feature-list li { margin-bottom: 10px; font-size: 1.1rem; opacity: 0.9; display: flex; align-items: flex-start; }
         .feature-list li::before { content: '✓'; color: var(--accent-color); font-weight: bold; margin-right: 12px; }
 
         .badge { background: var(--accent-color); color: var(--bg-color); padding: 0.3rem 1rem; border-radius: 50px; font-weight: bold; font-size: 0.75rem; text-transform: uppercase; display: inline-block; }
-        h3 { font-size: 1.8rem; margin-top: 1rem; margin-bottom: 0.5rem; text-align: left;}
+        h3 { font-size: 1.8rem; margin-top: 1rem; margin-bottom: 0.5rem; text-align: center;}
         
         .footer { margin-top: 4rem; font-size: 0.85rem; opacity: 0.5; padding-bottom: 2rem; text-align: center;}
         a { color: var(--accent-color); text-decoration: none; font-weight: bold; }
@@ -95,7 +96,7 @@
             <ul class="feature-list" id="description-list">
                 </ul>
 
-            <p id="status" style="font-size: 0.9rem; margin-top: 20px;"><i>Coming soon to Google Play Store.</i></p>
+            <p id="status" style="font-size: 0.9rem; margin-top: 20px; text-align: center;"><i>Coming soon to Google Play Store.</i></p>
         </div>
 
         <div class="footer">
@@ -146,7 +147,6 @@
             document.getElementById('badge').innerText = translations[lang].badge;
             document.getElementById('status').innerHTML = `<i>${translations[lang].status}</i>`;
 
-            // Atualiza a lista de frases
             const listContainer = document.getElementById('description-list');
             listContainer.innerHTML = '';
             translations[lang].features.forEach(text => {
