@@ -1,1 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Baronsud Mobile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
 
+        :root {
+            --bg-color: #0b1120;
+            --card-bg: #1e293b;
+            --text-color: #cbd5e1;
+            --accent-color: #00ff88;
+            --gold-color: #fbbf24;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            text-align: left;
+        }
+
+        /* Header Style */
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 2rem;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: var(--gold-color);
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        p, li {
+            line-height: 1.6;
+            opacity: 0.9;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        a { color: var(--accent-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        ul { padding-left: 20px; }
+
+        /* Language Switcher (Igual ao Index) */
+        .lang-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 2rem;
+        }
+        .lang-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+        .lang-btn.active {
+            background: var(--accent-color);
+            color: #000;
+            font-weight: bold;
+            border-color: var(--accent-color);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            font-size: 0.8rem;
+            opacity: 0.5;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="lang-switcher">
+            <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
+            <button class="lang-btn" onclick="setLanguage('pt')" id="btn-pt">PT</button>
+        </div>
+
+        <header>
+            <h1 id="title">Privacy Policy</h1>
+            <p id="subtitle">Last updated: January 2026</p>
+        </header>
+
+        <div id="content">
+            </div>
+
+        <div class="footer">
+            &copy; 2026 Baronsud Mobile.
+        </div>
+    </div>
+
+    <script>
+        const content = {
+            'en': `
+                <p>Baronsud Mobile built the <strong>Memorize Art</strong> app as a Free app. This SERVICE is provided by Baronsud Mobile at no cost and is intended for use as is.</p>
+                
+                <h2>Information Collection and Use</h2>
+                <p>We take your privacy seriously. <strong>Baronsud Mobile does not collect, store, or share any personal information from its users.</strong> The app functions efficiently without requiring you to create an account or provide personal data.</p>
+                <p>However, the app uses third-party services that may collect information used to identify you (e.g., for advertising purposes). Link to privacy policy of third-party service providers used by the app:</p>
+                <ul>
+                    <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
+                    <li><a href="https://support.google.com/admob/answer/6128543?hl=pt" target="_blank">AdMob</a></li>
+                </ul>
+
+                <h2>Log Data</h2>
+                <p>We want to inform you that whenever you use our Service, in a case of an error in the app, we may collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol ("IP") address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.</p>
+
+                <h2>Children’s Privacy</h2>
+                <p>These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to do necessary actions.</p>
+
+                <h2>Contact Us</h2>
+                <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at <a href="mailto:baronsud@proton.me">baronsud@proton.me</a>.</p>
+            `,
+            'pt': `
+                <p>A Baronsud Mobile desenvolveu o aplicativo <strong>Memorize Art</strong> como um aplicativo gratuito. Este SERVIÇO é fornecido pela Baronsud Mobile sem custos e destina-se a ser utilizado no estado em que se encontra.</p>
+                
+                <h2>Coleta e Uso de Informações</h2>
+                <p>Levamos sua privacidade a sério. <strong>A Baronsud Mobile não coleta, armazena ou compartilha nenhuma informação pessoal de seus usuários.</strong> O aplicativo funciona de forma eficiente sem exigir que você crie uma conta ou forneça dados pessoais.</p>
+                <p>No entanto, o aplicativo utiliza serviços de terceiros que podem coletar informações usadas para identificá-lo (por exemplo, para fins de publicidade). Link para a política de privacidade dos provedores de serviços terceirizados utilizados pelo aplicativo:</p>
+                <ul>
+                    <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
+                    <li><a href="https://support.google.com/admob/answer/6128543?hl=pt" target="_blank">AdMob</a></li>
+                </ul>
+
+                <h2>Dados de Log</h2>
+                <p>Informamos que, sempre que você usar nosso Serviço, em caso de erro no aplicativo, podemos coletar dados e informações (por meio de produtos de terceiros) em seu telefone, chamados Dados de Log. Esses dados podem incluir informações como o endereço IP do seu dispositivo, nome do dispositivo, versão do sistema operacional, a configuração do aplicativo ao utilizar nosso Serviço, a hora e a data de uso do Serviço e outras estatísticas.</p>
+
+                <h2>Privacidade das Crianças</h2>
+                <p>Esses Serviços não se destinam a menores de 13 anos. Não coletamos intencionalmente informações de identificação pessoal de crianças menores de 13 anos. Se você é pai/mãe ou responsável e sabe que seu filho nos forneceu informações pessoais, entre em contato conosco para que possamos tomar as medidas necessárias.</p>
+
+                <h2>Entre em Contato</h2>
+                <p>Se você tiver alguma dúvida ou sugestão sobre nossa Política de Privacidade, não hesite em nos contatar em <a href="mailto:baronsud@proton.me">baronsud@proton.me</a>.</p>
+            `
+        };
+
+        const titles = {
+            'en': { h1: "Privacy Policy", sub: "Last updated: January 2026" },
+            'pt': { h1: "Política de Privacidade", sub: "Última atualização: Janeiro 2026" }
+        };
+
+        function setLanguage(lang) {
+            // Atualiza Títulos
+            document.getElementById('title').innerText = titles[lang].h1;
+            document.getElementById('subtitle').innerText = titles[lang].sub;
+            
+            // Injeta o Conteúdo HTML
+            document.getElementById('content').innerHTML = content[lang];
+
+            // Atualiza Botões
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-' + lang).classList.add('active');
+        }
+
+        // Auto-detectar idioma
+        const userLang = navigator.language.split('-')[0];
+        const defaultLang = content[userLang] ? userLang : 'en';
+        setLanguage(defaultLang);
+    </script>
+</body>
+</html>
