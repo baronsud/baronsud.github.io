@@ -35,7 +35,6 @@
             text-align: left;
         }
 
-        /* Header Style */
         header {
             text-align: center;
             margin-bottom: 3rem;
@@ -70,7 +69,6 @@
 
         ul { padding-left: 20px; }
 
-        /* Language Switcher */
         .lang-switcher {
             display: flex;
             justify-content: center;
@@ -130,17 +128,22 @@
     <script>
         const content = {
             'en': `
-                <p>Baronsud Mobile built the <strong>Memorize Art</strong> app as a Free app. This SERVICE is provided by Baronsud Mobile at no cost and is intended for use as is.</p>
+                <p>Baronsud Mobile built the <strong>Memorize Art</strong> app as a Free app with optional Premium features. This SERVICE is provided by Baronsud Mobile at no cost and is intended for use as is.</p>
                 
                 <h2>Explicit Declaration of Non-Collection</h2>
                 <p><strong>Baronsud Mobile explicitly states that we do not own servers, databases, or mechanisms to collect, store, or process your personal data directly.</strong> We do not have access to your personal information.</p>
-                <p>Any data collection occurring within this application is performed <strong>exclusively</strong> by third-party service providers (specifically Google) necessary for the app's functionality and advertisement delivery.</p>
+                <p>Any data collection occurring within this application is performed <strong>exclusively</strong> by third-party service providers (specifically Google) necessary for the app's functionality, payment processing, and advertisement delivery.</p>
+
+                <h2>Payments and Premium Features</h2>
+                <p>The app offers Premium features via In-App Purchases (subscriptions or one-time payments).</p>
+                <p><strong>We do not process payments.</strong> All financial transactions are processed exclusively by <strong>Google Play</strong>. Baronsud Mobile does not collect, store, or have access to your credit card details, banking information, or billing address.</p>
+                <p>We only receive a specialized technical confirmation (purchase token) from Google's servers indicating that a transaction was successful. We use this anonymous signal solely to unlock the Premium features on your device.</p>
 
                 <h2>Third-Party Data Collection</h2>
                 <p>While we do not collect your data, the app uses third-party services that may collect information used to identify you (e.g., Advertising ID) to serve personalized ads or analyze performance.</p>
                 <p>Link to privacy policy of third-party service providers used by the app:</p>
                 <ul>
-                    <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
+                    <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services (Payments & Data)</a></li>
                     <li><a href="https://support.google.com/admob/answer/6128543?hl=pt" target="_blank">AdMob</a></li>
                 </ul>
 
@@ -149,23 +152,28 @@
 
                 <h2>Children’s Privacy</h2>
                 <p><strong>Baronsud Mobile does not collect data from children.</strong></p>
-                <p>Since we rely on third-party services like Google AdMob, we strictly follow their guidelines. If this app is targeted at children, we configure these services to limit data collection as per Google's Families Policy. If you are a parent and believe your child's data is being processed by Google services through our app against your consent, please contact us so we can guide you or verify settings.</p>
+                <p>Since we rely on third-party services like Google AdMob, we strictly follow their guidelines. If this app is targeted at children, we configure these services to limit data collection as per Google's Families Policy.</p>
 
                 <h2>Contact Us</h2>
                 <p>If you have any questions about this distinction or our Privacy Policy, do not hesitate to contact us at <a href="mailto:baronsud@proton.me">baronsud@proton.me</a>.</p>
             `,
             'pt': `
-                <p>A Baronsud Mobile desenvolveu o aplicativo <strong>Memorize Art</strong> como um aplicativo gratuito. Este SERVIÇO é fornecido pela Baronsud Mobile sem custos e destina-se a ser utilizado no estado em que se encontra.</p>
+                <p>A Baronsud Mobile desenvolveu o aplicativo <strong>Memorize Art</strong> como um aplicativo gratuito com opções de funcionalidades Premium. Este SERVIÇO é fornecido pela Baronsud Mobile sem custos e destina-se a ser utilizado no estado em que se encontra.</p>
                 
                 <h2>Declaração Explícita de Não Coleta</h2>
                 <p><strong>A Baronsud Mobile declara explicitamente que não possui servidores, bancos de dados ou mecanismos para coletar, armazenar ou processar seus dados pessoais diretamente.</strong> Nós não temos acesso às suas informações pessoais.</p>
-                <p>Qualquer coleta de dados que ocorra dentro deste aplicativo é realizada <strong>exclusivamente</strong> por provedores de serviços terceirizados (especificamente o Google), necessários para o funcionamento do app e exibição de anúncios.</p>
+                <p>Qualquer coleta de dados que ocorra dentro deste aplicativo é realizada <strong>exclusivamente</strong> por provedores de serviços terceirizados (especificamente o Google), necessários para o funcionamento do app, processamento de pagamentos e exibição de anúncios.</p>
+
+                <h2>Pagamentos e Funcionalidades Premium</h2>
+                <p>O aplicativo oferece funcionalidades Premium via Compras no App (assinaturas ou pagamento único).</p>
+                <p><strong>Nós não processamos pagamentos.</strong> Todas as transações financeiras são processadas exclusivamente pelo <strong>Google Play</strong>. A Baronsud Mobile não coleta, armazena ou tem acesso aos dados do seu cartão de crédito, informações bancárias ou endereço de cobrança.</p>
+                <p>Recebemos apenas uma confirmação técnica especializada (token de compra) dos servidores do Google indicando que uma transação foi bem-sucedida. Utilizamos esse sinal anônimo unicamente para desbloquear os recursos Premium no seu dispositivo.</p>
 
                 <h2>Coleta de Dados por Terceiros</h2>
                 <p>Embora nós (Baronsud Mobile) não coletemos seus dados, o aplicativo utiliza serviços do Google que podem coletar informações usadas para identificá-lo (como o ID de Publicidade) para exibir anúncios personalizados ou analisar o desempenho do app.</p>
                 <p>Link para a política de privacidade dos serviços terceirizados utilizados:</p>
                 <ul>
-                    <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
+                    <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services (Pagamentos e Dados)</a></li>
                     <li><a href="https://support.google.com/admob/answer/6128543?hl=pt" target="_blank">AdMob</a></li>
                 </ul>
 
@@ -174,7 +182,7 @@
 
                 <h2>Privacidade das Crianças</h2>
                 <p><strong>A Baronsud Mobile não coleta dados de crianças.</strong></p>
-                <p>Como dependemos de serviços terceiros como Google AdMob, seguimos estritamente suas diretrizes. Se este aplicativo for direcionado a crianças, configuramos esses serviços para limitar a coleta de dados conforme a Política de Famílias do Google. Se você é pai/mãe e acredita que dados do seu filho estão sendo processados pelo Google através do nosso app, entre em contato para que possamos verificar as configurações.</p>
+                <p>Como dependemos de serviços terceiros como Google AdMob, seguimos estritamente suas diretrizes. Se este aplicativo for direcionado a crianças, configuramos esses serviços para limitar a coleta de dados conforme a Política de Famílias do Google.</p>
 
                 <h2>Entre em Contato</h2>
                 <p>Se você tiver alguma dúvida sobre essa distinção ou sobre nossa Política de Privacidade, não hesite em nos contatar em <a href="mailto:baronsud@proton.me">baronsud@proton.me</a>.</p>
@@ -187,19 +195,13 @@
         };
 
         function setLanguage(lang) {
-            // Atualiza Títulos
             document.getElementById('title').innerText = titles[lang].h1;
             document.getElementById('subtitle').innerText = titles[lang].sub;
-            
-            // Injeta o Conteúdo HTML
             document.getElementById('content').innerHTML = content[lang];
-
-            // Atualiza Botões
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById('btn-' + lang).classList.add('active');
         }
 
-        // Auto-detectar idioma
         const userLang = navigator.language.split('-')[0];
         const defaultLang = content[userLang] ? userLang : 'en';
         setLanguage(defaultLang);
