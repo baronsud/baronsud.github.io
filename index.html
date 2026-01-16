@@ -46,8 +46,8 @@
         .lang-btn.active { opacity: 1; background: var(--accent-color); color: var(--bg-color); font-weight: bold; }
         
         .container { max-width: 800px; padding: 2rem; margin: auto; }
-        .logo-main { font-size: 3rem; font-weight: 800; line-height: 0.8; margin: 0; color: var(--accent-color); letter-spacing: -2px; text-transform: uppercase; }
-        .logo-sub { font-size: 1.75rem; font-weight: 300; line-height: 1; margin: 0; opacity: 0.9; letter-spacing: 2px; text-transform: uppercase; }
+        .logo-main { font-size: 4rem; font-weight: 800; line-height: 0.8; margin: 0; color: var(--accent-color); letter-spacing: -2px; text-transform: uppercase; }
+        .logo-sub { font-size: 2.5rem; font-weight: 300; line-height: 1; margin: 0; opacity: 0.9; letter-spacing: 2px; text-transform: uppercase; }
         
         h2.tagline { font-weight: 300; opacity: 0.6; margin-top: 1.5rem; margin-bottom: 2.5rem; text-transform: uppercase; letter-spacing: 4px; font-size: 0.85rem; }
         
@@ -57,19 +57,36 @@
             border-radius: 20px; 
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255,255,255,0.1); 
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Centraliza os itens dentro do card */
+            text-align: center; /* Garante centralização dos blocos filhos */
         }
 
-        .feature-list { list-style: none; padding: 0; margin: 1.5rem 0; text-align: left; align-self: stretch; max-width: 400px; margin-left: auto; margin-right: auto; }
-        .feature-list li { margin-bottom: 10px; font-size: 1.1rem; opacity: 0.9; display: flex; align-items: flex-start; }
-        .feature-list li::before { content: '✓'; color: var(--accent-color); font-weight: bold; margin-right: 12px; }
+        /* Ajuste fino da Lista para alinhamento visual */
+        .feature-list { 
+            list-style: none; 
+            padding: 0; 
+            margin: 1.5rem auto; 
+            display: inline-block; /* A caixa se ajusta ao tamanho do texto */
+            text-align: left; /* Mantém o texto alinhado com o check */
+        }
+        .feature-list li { 
+            margin-bottom: 10px; 
+            font-size: 1.1rem; 
+            opacity: 0.9; 
+            display: flex; 
+            align-items: center; 
+        }
+        .feature-list li::before { 
+            content: '✓'; 
+            color: var(--accent-color); 
+            font-weight: bold; 
+            margin-right: 12px; 
+            flex-shrink: 0;
+        }
 
         .badge { background: var(--accent-color); color: var(--bg-color); padding: 0.3rem 1rem; border-radius: 50px; font-weight: bold; font-size: 0.75rem; text-transform: uppercase; display: inline-block; }
-        h3 { font-size: 1.8rem; margin-top: 1rem; margin-bottom: 0.5rem; text-align: center;}
+        h3 { font-size: 1.8rem; margin-top: 1rem; margin-bottom: 0.5rem; }
         
-        .footer { margin-top: 4rem; font-size: 0.85rem; opacity: 0.5; padding-bottom: 2rem; text-align: center;}
+        .footer { margin-top: 4rem; font-size: 0.85rem; opacity: 0.5; padding-bottom: 2rem; }
         a { color: var(--accent-color); text-decoration: none; font-weight: bold; }
     </style>
 </head>
@@ -90,13 +107,13 @@
         <h2 id="tagline" class="tagline">Android Development</h2>
 
         <div class="project-card">
-            <span id="badge" class="badge">Latest Release</span>
+            <div><span id="badge" class="badge">Latest Release</span></div>
             <h3>Memorize Art</h3>
             
             <ul class="feature-list" id="description-list">
                 </ul>
 
-            <p id="status" style="font-size: 0.9rem; margin-top: 20px; text-align: center;"><i>Coming soon to Google Play Store.</i></p>
+            <p id="status" style="font-size: 0.9rem; margin-top: 20px;"><i>Coming soon to Google Play Store.</i></p>
         </div>
 
         <div class="footer">
