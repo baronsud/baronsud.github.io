@@ -12,12 +12,11 @@
         }
 
         :root {
-            /* --- A MÁGICA DO VERDE E BRANCO ACONTECE AQUI --- */
-            --bg-color: #022c22;      /* Verde Quase Preto (Fundo Profundo) */
-            --card-bg: #064e3b;       /* Verde Floresta Elegante */
-            --text-color: #ecfdf5;    /* Branco Menta (Suave para ler) */
-            --accent-color: #34d399;  /* Verde Esmeralda Vibrante (Destaques) */
-            --gold-color: #fbbf24;    /* Dourado mantido (Combina muito com verde) */
+            --bg-color: #022c22;      /* Verde Quase Preto */
+            --card-bg: #064e3b;       /* Verde Floresta */
+            --text-color: #ecfdf5;    /* Branco Menta */
+            --accent-color: #34d399;  /* Verde Esmeralda */
+            --gold-color: #fbbf24;    /* Dourado */
         }
 
         body {
@@ -34,7 +33,6 @@
             width: 100%;
         }
 
-        /* Seletor de Idioma */
         .lang-switcher {
             margin-top: 1.5rem;
             padding: 0.4rem;
@@ -42,7 +40,7 @@
             border-radius: 50px;
             display: flex;
             gap: 5px;
-            border: 1px solid rgba(52, 211, 153, 0.2); /* Borda verde sutil */
+            border: 1px solid rgba(52, 211, 153, 0.2);
         }
         .lang-btn {
             background: none;
@@ -60,25 +58,26 @@
         .lang-btn.active { 
             opacity: 1; 
             background: var(--accent-color); 
-            color: #022c22; /* Texto escuro no fundo claro para contraste */
+            color: #022c22; 
             font-weight: 800; 
         }
 
+        /* --- AQUI ESTÁ A MUDANÇA PARA ESTREITAR --- */
         .container { 
-            width: 100%; 
-            max-width: 800px; 
-            padding: 2rem 1.5rem; 
+            width: fit-content;  /* O segredo: largura se adapta ao conteúdo */
+            min-width: 300px;    /* Tamanho mínimo para não ficar muito espremido */
+            max-width: 90%;      /* Margem de segurança no mobile */
+            padding: 2rem 1rem; 
             margin: auto; 
         }
 
-        /* LOGO */
         .logo-container { margin-bottom: 0.5rem; }
         .logo-main { 
             font-size: 4rem; 
             font-weight: 800; 
             line-height: 0.9; 
             margin: 0; 
-            color: var(--text-color); /* Agora Branco para destaque */
+            color: var(--text-color);
             letter-spacing: -2px; 
             text-transform: uppercase;
             text-shadow: 0 5px 15px rgba(0,0,0,0.3);
@@ -91,10 +90,9 @@
             opacity: 0.9; 
             letter-spacing: 2px; 
             text-transform: uppercase; 
-            color: var(--accent-color); /* "MOBILE" em Verde Vibrante */
+            color: var(--accent-color);
         }
 
-        /* SLOGAN */
         .slogan {
             font-size: 0.9rem;
             text-transform: uppercase;
@@ -106,20 +104,19 @@
             font-weight: 600;
         }
 
-        /* CARD DO PROJETO */
         .project-card { 
             background: var(--card-bg); 
-            padding: 2.5rem 1.5rem; 
+            padding: 2.5rem 2rem; /* Um pouco mais de padding lateral interno */
             border-radius: 20px; 
             box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(52, 211, 153, 0.1); /* Borda verde fina */
+            border: 1px solid rgba(52, 211, 153, 0.1); 
             text-align: center;
+            width: 100%; /* Garante que preencha o container (que agora é estreito) */
         }
 
-        /* BADGE */
         .badge { 
             background: var(--gold-color); 
-            color: #064e3b; /* Texto verde escuro no dourado */
+            color: #064e3b; 
             padding: 0.3rem 1rem; 
             border-radius: 50px; 
             font-weight: 800; 
@@ -136,7 +133,6 @@
             color: #fff;
         }
 
-        /* LISTA DE FEATURES */
         .feature-list { 
             list-style: none; 
             padding: 0; 
@@ -153,7 +149,7 @@
         }
         .feature-list li::before { 
             content: '✓'; 
-            color: var(--accent-color); /* Checkmark Verde Vibrante */
+            color: var(--accent-color); 
             font-weight: bold; 
             margin-right: 12px; 
             flex-shrink: 0;
@@ -165,12 +161,11 @@
             opacity: 0.5; 
             padding-bottom: 2rem; 
             line-height: 1.6;
-            color: #a7f3d0; /* Verde bem clarinho para o rodapé */
+            color: #a7f3d0;
         }
         a { color: var(--accent-color); text-decoration: none; font-weight: bold; transition: 0.3s; }
         a:hover { color: var(--gold-color); }
 
-        /* AJUSTE PARA CELULAR */
         @media (max-width: 600px) {
             .logo-main { font-size: 2.8rem; }
             .logo-sub { font-size: 1.8rem; }
