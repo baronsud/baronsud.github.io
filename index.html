@@ -6,17 +6,18 @@
     <title>Baronsud Mobile</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
     <style>
-        /* RESET OBRIGATÓRIO PARA NÃO QUEBRAR NO MOBILE */
+        /* RESET OBRIGATÓRIO */
         * {
             box-sizing: border-box;
         }
 
         :root {
-            --bg-color: #0b1120;      /* Fundo "Espaço Profundo" */
-            --card-bg: #1e293b;       /* Cinza Azulado Tech */
-            --text-color: #cbd5e1;    /* Cinza Claro (Leitura suave) */
-            --accent-color: #00ff88;  /* Verde Intergalático */
-            --gold-color: #fbbf24;    /* Dourado para destaque */
+            /* --- A MÁGICA DO VERDE E BRANCO ACONTECE AQUI --- */
+            --bg-color: #022c22;      /* Verde Quase Preto (Fundo Profundo) */
+            --card-bg: #064e3b;       /* Verde Floresta Elegante */
+            --text-color: #ecfdf5;    /* Branco Menta (Suave para ler) */
+            --accent-color: #34d399;  /* Verde Esmeralda Vibrante (Destaques) */
+            --gold-color: #fbbf24;    /* Dourado mantido (Combina muito com verde) */
         }
 
         body {
@@ -29,7 +30,7 @@
             align-items: center;
             min-height: 100vh;
             text-align: center;
-            overflow-x: hidden; /* Impede rolagem lateral */
+            overflow-x: hidden;
             width: 100%;
         }
 
@@ -41,7 +42,7 @@
             border-radius: 50px;
             display: flex;
             gap: 5px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(52, 211, 153, 0.2); /* Borda verde sutil */
         }
         .lang-btn {
             background: none;
@@ -59,14 +60,14 @@
         .lang-btn.active { 
             opacity: 1; 
             background: var(--accent-color); 
-            color: #000000; /* Texto preto no verde para contraste */
+            color: #022c22; /* Texto escuro no fundo claro para contraste */
             font-weight: 800; 
         }
 
         .container { 
             width: 100%; 
             max-width: 800px; 
-            padding: 2rem 1.5rem; /* Ajustado padding lateral */
+            padding: 2rem 1.5rem; 
             margin: auto; 
         }
 
@@ -77,10 +78,10 @@
             font-weight: 800; 
             line-height: 0.9; 
             margin: 0; 
-            color: var(--accent-color); 
+            color: var(--text-color); /* Agora Branco para destaque */
             letter-spacing: -2px; 
             text-transform: uppercase;
-            text-shadow: 0 0 20px rgba(0, 255, 136, 0.2); /* Brilho neon sutil */
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         .logo-sub { 
             font-size: 2.5rem; 
@@ -90,29 +91,19 @@
             opacity: 0.9; 
             letter-spacing: 2px; 
             text-transform: uppercase; 
-            color: #ffffff;
+            color: var(--accent-color); /* "MOBILE" em Verde Vibrante */
         }
 
-        /* SLOGAN NOVO */
+        /* SLOGAN */
         .slogan {
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 3px;
             color: var(--gold-color);
-            opacity: 0.8;
+            opacity: 0.9;
             margin-top: 0.5rem;
             margin-bottom: 3rem;
             font-weight: 600;
-        }
-
-        h2.tagline { 
-            font-weight: 300; 
-            opacity: 0.6; 
-            margin-bottom: 2rem; 
-            text-transform: uppercase; 
-            letter-spacing: 4px; 
-            font-size: 0.75rem; 
-            display: none; /* Escondi a tagline antiga para focar no slogan */
         }
 
         /* CARD DO PROJETO */
@@ -120,15 +111,15 @@
             background: var(--card-bg); 
             padding: 2.5rem 1.5rem; 
             border-radius: 20px; 
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255,255,255,0.05); 
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(52, 211, 153, 0.1); /* Borda verde fina */
             text-align: center;
         }
 
-        /* BADGE DOURADA */
+        /* BADGE */
         .badge { 
             background: var(--gold-color); 
-            color: #000; 
+            color: #064e3b; /* Texto verde escuro no dourado */
             padding: 0.3rem 1rem; 
             border-radius: 50px; 
             font-weight: 800; 
@@ -162,7 +153,7 @@
         }
         .feature-list li::before { 
             content: '✓'; 
-            color: var(--accent-color); 
+            color: var(--accent-color); /* Checkmark Verde Vibrante */
             font-weight: bold; 
             margin-right: 12px; 
             flex-shrink: 0;
@@ -171,14 +162,15 @@
         .footer { 
             margin-top: 4rem; 
             font-size: 0.8rem; 
-            opacity: 0.4; 
+            opacity: 0.5; 
             padding-bottom: 2rem; 
             line-height: 1.6;
+            color: #a7f3d0; /* Verde bem clarinho para o rodapé */
         }
         a { color: var(--accent-color); text-decoration: none; font-weight: bold; transition: 0.3s; }
         a:hover { color: var(--gold-color); }
 
-        /* AJUSTE PARA CELULAR (A mágica acontece aqui) */
+        /* AJUSTE PARA CELULAR */
         @media (max-width: 600px) {
             .logo-main { font-size: 2.8rem; }
             .logo-sub { font-size: 1.8rem; }
@@ -211,7 +203,7 @@
             <ul class="feature-list" id="description-list">
                 </ul>
 
-            <p id="status" style="font-size: 0.9rem; margin-top: 30px; color: var(--accent-color);">
+            <p id="status" style="font-size: 0.9rem; margin-top: 30px; color: var(--accent-color); font-weight: 500;">
                 <i>Coming soon to Google Play Store.</i>
             </p>
         </div>
