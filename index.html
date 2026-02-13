@@ -6,23 +6,21 @@
     <title>Baronsud Mobile</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
     <style>
-        /* RESET OBRIGATÓRIO */
-        * {
-            box-sizing: border-box;
-        }
+        /* RESET & VARIAVEIS */
+        * { box-sizing: border-box; }
 
         :root {
             /* PALETA CYBER DIGITAL */
-            --bg-color: #050510;       /* Roxo quase preto (Void) */
+            --bg-color: #050510;       /* Roxo quase preto */
             --card-bg: #121225;        /* Roxo Digital Escuro */
             --text-color: #e0f2fe;     /* Branco Gelo */
-            --accent-color: #00f3ff;   /* Azul Elétrico (Cyan) */
-            --secondary-color: #d946ef; /* Roxo Neon / Magenta */
+            --accent-color: #00f3ff;   /* Azul Elétrico */
+            --secondary-color: #d946ef; /* Roxo Neon */
             --gold-color: #facc15;     /* Amarelo Elétrico */
         }
 
         body {
-            font-family: 'Montserrat', sans-serif; /* Mudei tudo para Montserrat para ficar mais moderno */
+            font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
@@ -35,10 +33,11 @@
             width: 100%;
         }
 
+        /* --- ESTILOS GERAIS --- */
         .lang-switcher {
             margin-top: 1.5rem;
             padding: 0.4rem;
-            background: rgba(0, 243, 255, 0.05); /* Fundo sutil ciano */
+            background: rgba(0, 243, 255, 0.05);
             border-radius: 50px;
             display: flex;
             gap: 5px;
@@ -81,11 +80,10 @@
             align-items: center;
         }
 
-        /* Estilo da Imagem do Logo */
         .logo-img {
-            width: 80px; /* Tamanho controlado */
+            width: 80px; 
             height: auto;
-            border-radius: 50%; /* Redondo */
+            border-radius: 50%; 
             border: 2px solid var(--accent-color);
             box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
             margin-bottom: 10px;
@@ -119,28 +117,45 @@
             color: var(--secondary-color);
             opacity: 0.9;
             margin-top: 0.5rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem; /* Reduzi um pouco */
             font-weight: 600;
             text-transform: uppercase;
         }
 
+        /* --- VIBE SECTION (CAPIVARA) --- */
+        .vibe-container {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .vibe-img {
+            width: 100%;
+            max-width: 500px; /* Limite para não ficar gigante */
+            border-radius: 15px;
+            border: 1px solid rgba(217, 70, 239, 0.3); /* Borda roxa sutil */
+            opacity: 0.8;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            transition: 0.3s;
+        }
+        .vibe-img:hover {
+            opacity: 1;
+            box-shadow: 0 0 20px rgba(217, 70, 239, 0.2);
+        }
+
+        /* --- PROJECT CARD --- */
         .project-card { 
             background: var(--card-bg); 
-            padding: 0; /* Removido padding geral para a imagem encostar nas bordas se quiser, ou ajuste abaixo */
+            padding: 0; 
             border-radius: 20px; 
-            box-shadow: 0 0 30px rgba(188, 19, 254, 0.15); /* Glow roxo */
+            box-shadow: 0 0 30px rgba(188, 19, 254, 0.15); 
             border: 1px solid rgba(0, 243, 255, 0.1); 
             text-align: center;
             width: 100%; 
-            overflow: hidden; /* Para a imagem não sair das bordas arredondadas */
+            overflow: hidden; 
             position: relative;
         }
         
-        .card-content {
-            padding: 2.5rem 2rem;
-        }
+        .card-content { padding: 2.5rem 2rem; }
 
-        /* Estilo da Imagem Capivara/Unicornio */
         .feature-img {
             width: 100%;
             height: auto;
@@ -221,27 +236,29 @@
 
     <div class="container">
         <div class="logo-container">
-            <img src="logo-bsud.jpg" alt="Baronsud Logo" class="logo-img">
-            
+            <img src="logob-sud.jpg" alt="Baronsud Logo" class="logo-img">
             <p class="logo-main">BARONSUD</p>
             <p class="logo-sub">MOBILE</p>
         </div>
         
         <p class="slogan">Simplicity is timeless.</p>
 
+        <div class="vibe-container">
+            <img src="capivaraunicornio.jpg" alt="Dev Vibe" class="vibe-img">
+        </div>
+
         <div class="project-card">
-            <img src="capivaraunicornio.jpg" alt="Programming Vibe" class="feature-img">
+            <img src="memorizeart.jpg" alt="Memorize Art Screenshot" class="feature-img">
             
             <div class="card-content">
                 <div><span id="badge" class="badge">Latest Release</span></div>
                 <h3>Memorize Art</h3>
                 
                 <ul class="feature-list" id="description-list">
-                </ul>
+                    </ul>
 
                 <p id="status" style="font-size: 0.9rem; margin-top: 30px; color: var(--accent-color); font-weight: 500; text-shadow: 0 0 5px rgba(0, 243, 255, 0.3);">
-                    <i>Coming soon to Google Play Store.</i>
-                </p>
+                    </p>
             </div>
         </div>
 
@@ -258,7 +275,7 @@
                 badge: "Lançamento", 
                 features: [
                     "Desafio de memória para amantes da arte.",
-                    "Desenvolvido nativamente em Kotlin.",
+                    "10 idiomas, 8 temas.",
                     "Design minimalista e eficiente.",
                     "Sem distrações desnecessárias."
                 ],
@@ -268,7 +285,7 @@
                 badge: "Latest Release", 
                 features: [
                     "Memory challenge for art lovers.",
-                    "Built natively with Kotlin.",
+                    "10 languages, 8 themes.",
                     "Minimalist and efficient design.",
                     "No unnecessary distractions."
                 ],
@@ -292,10 +309,8 @@
             document.getElementById('btn-' + lang).classList.add('active');
         }
 
-        const userLang = navigator.language.split('-')[0];
-        // Se o idioma do usuário não for 'pt', usa 'en' (removemos a verificação do 'es')
-        const defaultLang = userLang === 'pt' ? 'pt' : 'en';
-        setLanguage(defaultLang);
+        // Default to English
+        setLanguage('en');
     </script>
 </body>
 </html>
