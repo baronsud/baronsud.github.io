@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baronsud Mobile</title>
     
-    <link rel="icon" href="logo-bsud.jpg" type="image/jpeg">
+    <link rel="icon" href="logob-sud.jpg" type="image/jpeg">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
     <style>
@@ -14,8 +14,8 @@
 
         :root {
             /* PALETA CYBER DIGITAL */
-            --bg-color: #050510;       /* Roxo quase preto */
-            --card-bg: #121225;        /* Roxo Digital Escuro */
+            --bg-color: #050510;       /* Roxo quase preto (Fundo principal) */
+            --card-bg: #121225;        /* Roxo Digital Escuro (Cards) */
             --text-color: #e0f2fe;     /* Branco Gelo */
             --accent-color: #00f3ff;   /* Azul Elétrico */
             --secondary-color: #d946ef; /* Roxo Neon */
@@ -27,25 +27,46 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 0;
             min-height: 100vh;
             text-align: center;
             overflow-x: hidden;
             width: 100%;
         }
 
-        /* --- ESTILOS GERAIS --- */
+        /* --- NOVO: CABEÇALHO HERO COM FUNDO --- */
+        .hero-header {
+            position: relative;
+            width: 100%;
+            /* Imagem de fundo da Capivara/Unicornio */
+            background-image: url('capivaraunicornio.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Overlay para escurecer a imagem e melhorar a leitura do texto */
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(5, 5, 16, 0.85), var(--bg-color));
+            padding: 2rem 1rem 4rem 1rem; /* Espaço extra embaixo para a transição */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* --- ESTILOS GERAIS REAJUSTADOS --- */
         .lang-switcher {
-            margin-top: 1.5rem;
+            margin-bottom: 2rem; /* Espaço abaixo dos botões */
             padding: 0.4rem;
-            background: rgba(0, 243, 255, 0.05);
+            background: rgba(0, 243, 255, 0.1); /* Um pouco mais forte para contraste */
             border-radius: 50px;
             display: flex;
             gap: 5px;
-            border: 1px solid rgba(0, 243, 255, 0.2);
-            box-shadow: 0 0 10px rgba(0, 243, 255, 0.1);
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+            backdrop-filter: blur(5px); /* Efeito de vidro */
         }
         .lang-btn {
             background: none;
@@ -54,7 +75,7 @@
             cursor: pointer;
             padding: 6px 12px;
             font-size: 0.7rem;
-            opacity: 0.6;
+            opacity: 0.8; /* Mais visível */
             transition: 0.3s;
             border-radius: 50px;
             font-family: 'Montserrat', sans-serif;
@@ -65,15 +86,7 @@
             background: var(--accent-color); 
             color: #050510; 
             font-weight: 800; 
-            box-shadow: 0 0 10px var(--accent-color);
-        }
-
-        .container { 
-            width: fit-content; 
-            min-width: 300px; 
-            max-width: 90%; 
-            padding: 2rem 1rem; 
-            margin: auto; 
+            box-shadow: 0 0 15px var(--accent-color);
         }
 
         .logo-container { 
@@ -84,64 +97,56 @@
         }
 
         .logo-img {
-            width: 80px; 
+            width: 90px; /* Um pouco maior para destaque */
             height: auto;
             border-radius: 50%; 
-            border: 2px solid var(--accent-color);
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
-            margin-bottom: 10px;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 0 25px rgba(0, 243, 255, 0.5);
+            margin-bottom: 15px;
         }
 
         .logo-main { 
-            font-size: 3.5rem; 
-            font-weight: 800; 
+            font-size: 3.8rem; 
+            font-weight: 900; 
             line-height: 0.9; 
             margin: 0; 
-            color: var(--text-color);
+            color: #fff; /* Branco puro para destaque no fundo escuro */
             letter-spacing: -2px; 
             text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(224, 242, 254, 0.2);
+            text-shadow: 0 0 20px rgba(0, 243, 255, 0.6);
         }
         .logo-sub { 
-            font-size: 2rem; 
+            font-size: 2.2rem; 
             font-weight: 300; 
             line-height: 1; 
             margin: 0; 
-            opacity: 0.9; 
-            letter-spacing: 4px; 
+            opacity: 1; 
+            letter-spacing: 6px; 
             text-transform: uppercase; 
             color: var(--accent-color);
-            text-shadow: 0 0 10px rgba(0, 243, 255, 0.4);
+            text-shadow: 0 0 15px rgba(0, 243, 255, 0.8);
         }
 
         .slogan {
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            color: var(--secondary-color);
-            opacity: 0.9;
-            margin-top: 0.5rem;
-            margin-bottom: 2rem;
-            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            color: var(--gold-color); /* Dourado para destaque */
+            opacity: 1;
+            margin-top: 1rem;
+            font-weight: 700;
             text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(250, 204, 21, 0.5);
         }
 
-        /* --- VIBE SECTION (CAPIVARA) --- */
-        .vibe-container {
-            margin-bottom: 3rem;
+        /* --- CONTAINER PRINCIPAL (CORPO DO SITE) --- */
+        .main-container { 
+            width: fit-content; 
+            min-width: 300px; 
+            max-width: 90%; 
+            padding: 1rem; 
+            margin: -3rem auto 0 auto; /* Sobe um pouco para sobrepor o header */
             position: relative;
-        }
-        .vibe-img {
-            width: 100%;
-            max-width: 500px; /* Limite para não ficar gigante */
-            border-radius: 15px;
-            border: 1px solid rgba(217, 70, 239, 0.3); /* Borda roxa sutil */
-            opacity: 0.8;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            transition: 0.3s;
-        }
-        .vibe-img:hover {
-            opacity: 1;
-            box-shadow: 0 0 20px rgba(217, 70, 239, 0.2);
+            z-index: 10;
         }
 
         /* --- PROJECT CARD --- */
@@ -149,15 +154,15 @@
             background: var(--card-bg); 
             padding: 0; 
             border-radius: 20px; 
-            box-shadow: 0 0 30px rgba(188, 19, 254, 0.15); 
-            border: 1px solid rgba(0, 243, 255, 0.1); 
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(188, 19, 254, 0.2); /* Sombra mais forte para destacar do fundo */
+            border: 1px solid rgba(0, 243, 255, 0.15); 
             text-align: center;
             width: 100%; 
             overflow: hidden; 
             position: relative;
         }
         
-        .card-content { padding: 2.5rem 2rem; }
+        .card-content { padding: 3rem 2rem; }
 
         .feature-img {
             width: 100%;
@@ -169,22 +174,22 @@
         .badge { 
             background: var(--gold-color); 
             color: #050510; 
-            padding: 0.3rem 1rem; 
+            padding: 0.4rem 1.2rem; 
             border-radius: 50px; 
             font-weight: 800; 
-            font-size: 0.7rem; 
+            font-size: 0.75rem; 
             text-transform: uppercase; 
             display: inline-block;
             letter-spacing: 1px;
-            box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+            box-shadow: 0 0 15px rgba(251, 191, 36, 0.6);
         }
 
         h3 { 
-            font-size: 2rem; 
+            font-size: 2.2rem; 
             margin-top: 1.5rem; 
-            margin-bottom: 1rem; 
+            margin-bottom: 1.5rem; 
             color: #fff;
-            text-shadow: 0 0 5px rgba(255,255,255,0.3);
+            text-shadow: 0 0 10px rgba(255,255,255,0.4);
         }
 
         .feature-list { 
@@ -195,9 +200,9 @@
             text-align: left; 
         }
         .feature-list li { 
-            margin-bottom: 12px; 
-            font-size: 1rem; 
-            opacity: 0.9; 
+            margin-bottom: 15px; 
+            font-size: 1.1rem; 
+            opacity: 0.95; 
             display: flex; 
             align-items: flex-start; 
         }
@@ -207,11 +212,11 @@
             font-weight: bold; 
             margin-right: 12px; 
             flex-shrink: 0;
-            text-shadow: 0 0 5px var(--secondary-color);
+            text-shadow: 0 0 8px var(--secondary-color);
         }
 
         .footer { 
-            margin-top: 4rem; 
+            margin-top: 5rem; 
             font-size: 0.8rem; 
             opacity: 0.6; 
             padding-bottom: 2rem; 
@@ -226,30 +231,33 @@
             .logo-sub { font-size: 1.8rem; }
             .card-content { padding: 2rem 1rem; }
             h3 { font-size: 1.6rem; }
-            .feature-list li { font-size: 0.95rem; }
+            .feature-list li { font-size: 1rem; }
+            .hero-overlay { padding-bottom: 3rem; }
+            .main-container { margin-top: -2rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="lang-switcher">
-        <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
-        <button class="lang-btn" onclick="setLanguage('pt')" id="btn-pt">PT</button>
-    </div>
+    <header class="hero-header">
+        <div class="hero-overlay">
+            <div class="lang-switcher">
+                <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
+                <button class="lang-btn" onclick="setLanguage('pt')" id="btn-pt">PT</button>
+            </div>
 
-    <div class="container">
-        <div class="logo-container">
-            <img src="logo-bsud.jpg" alt="Baronsud Logo" class="logo-img">
-            <p class="logo-main">BARONSUD</p>
-            <p class="logo-sub">MOBILE</p>
+            <div class="logo-container">
+                <img src="logo-bsud.jpg" alt="Baronsud Logo" class="logo-img">
+                <p class="logo-main">BARONSUD</p>
+                <p class="logo-sub">MOBILE</p>
+            </div>
+            
+            <p class="slogan">Simplicity is timeless.</p>
         </div>
+    </header>
+
+    <main class="main-container">
         
-        <p class="slogan">Simplicity is timeless.</p>
-
-        <div class="vibe-container">
-            <img src="capivaraunicornio.jpg" alt="Dev Vibe" class="vibe-img">
-        </div>
-
         <div class="project-card">
             <img src="memorizeart.jpg" alt="Memorize Art Screenshot" class="feature-img">
             
@@ -260,7 +268,7 @@
                 <ul class="feature-list" id="description-list">
                     </ul>
 
-                <p id="status" style="font-size: 0.9rem; margin-top: 30px; color: var(--accent-color); font-weight: 500; text-shadow: 0 0 5px rgba(0, 243, 255, 0.3);">
+                <p id="status" style="font-size: 1rem; margin-top: 35px; color: var(--accent-color); font-weight: 600; text-shadow: 0 0 10px rgba(0, 243, 255, 0.4); letter-spacing: 1px;">
                     </p>
             </div>
         </div>
@@ -270,7 +278,7 @@
             Contact: <a href="mailto:baronsud@proton.me">baronsud@proton.me</a> | 
             <a href="privacy.html">Privacy Policy</a>
         </div>
-    </div>
+    </main>
 
     <script>
         const translations = {
