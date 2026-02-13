@@ -14,12 +14,12 @@
 
         :root {
             /* PALETA CYBER DIGITAL */
-            --bg-color: #050510;       /* Roxo quase preto (Fundo principal) */
-            --card-bg: #121225;        /* Roxo Digital Escuro (Cards) */
-            --text-color: #e0f2fe;     /* Branco Gelo */
-            --accent-color: #00f3ff;   /* Azul Elétrico */
-            --secondary-color: #d946ef; /* Roxo Neon */
-            --gold-color: #facc15;     /* Amarelo Elétrico */
+            --bg-color: #050510;       
+            --card-bg: #121225;        
+            --text-color: #e0f2fe;     
+            --accent-color: #00f3ff;   
+            --secondary-color: #d946ef; 
+            --gold-color: #facc15;     
         }
 
         body {
@@ -34,21 +34,19 @@
             width: 100%;
         }
 
-        /* --- NOVO: CABEÇALHO HERO COM FUNDO --- */
+        /* --- HERO HEADER --- */
         .hero-header {
             position: relative;
             width: 100%;
-            /* Imagem de fundo da Capivara/Unicornio */
             background-image: url('capivaraunicornio.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
 
-        /* Overlay para escurecer a imagem e melhorar a leitura do texto */
         .hero-overlay {
             background: linear-gradient(to bottom, rgba(5, 5, 16, 0.85), var(--bg-color));
-            padding: 2rem 1rem 4rem 1rem; /* Espaço extra embaixo para a transição */
+            padding: 2rem 1rem 4rem 1rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -56,17 +54,17 @@
             height: 100%;
         }
 
-        /* --- ESTILOS GERAIS REAJUSTADOS --- */
+        /* --- ESTILOS GERAIS --- */
         .lang-switcher {
-            margin-bottom: 2rem; /* Espaço abaixo dos botões */
+            margin-bottom: 2rem;
             padding: 0.4rem;
-            background: rgba(0, 243, 255, 0.1); /* Um pouco mais forte para contraste */
+            background: rgba(0, 243, 255, 0.1);
             border-radius: 50px;
             display: flex;
             gap: 5px;
             border: 1px solid rgba(0, 243, 255, 0.3);
             box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
-            backdrop-filter: blur(5px); /* Efeito de vidro */
+            backdrop-filter: blur(5px);
         }
         .lang-btn {
             background: none;
@@ -75,7 +73,7 @@
             cursor: pointer;
             padding: 6px 12px;
             font-size: 0.7rem;
-            opacity: 0.8; /* Mais visível */
+            opacity: 0.8;
             transition: 0.3s;
             border-radius: 50px;
             font-family: 'Montserrat', sans-serif;
@@ -97,7 +95,7 @@
         }
 
         .logo-img {
-            width: 90px; /* Um pouco maior para destaque */
+            width: 90px;
             height: auto;
             border-radius: 50%; 
             border: 3px solid var(--accent-color);
@@ -110,7 +108,7 @@
             font-weight: 900; 
             line-height: 0.9; 
             margin: 0; 
-            color: #fff; /* Branco puro para destaque no fundo escuro */
+            color: #fff;
             letter-spacing: -2px; 
             text-transform: uppercase;
             text-shadow: 0 0 20px rgba(0, 243, 255, 0.6);
@@ -130,7 +128,7 @@
         .slogan {
             font-size: 1.1rem;
             letter-spacing: 2px;
-            color: var(--gold-color); /* Dourado para destaque */
+            color: var(--gold-color);
             opacity: 1;
             margin-top: 1rem;
             font-weight: 700;
@@ -138,13 +136,13 @@
             text-shadow: 0 0 10px rgba(250, 204, 21, 0.5);
         }
 
-        /* --- CONTAINER PRINCIPAL (CORPO DO SITE) --- */
+        /* --- CONTAINER PRINCIPAL --- */
         .main-container { 
             width: fit-content; 
             min-width: 300px; 
             max-width: 90%; 
             padding: 1rem; 
-            margin: -3rem auto 0 auto; /* Sobe um pouco para sobrepor o header */
+            margin: -3rem auto 0 auto;
             position: relative;
             z-index: 10;
         }
@@ -154,7 +152,7 @@
             background: var(--card-bg); 
             padding: 0; 
             border-radius: 20px; 
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(188, 19, 254, 0.2); /* Sombra mais forte para destacar do fundo */
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(188, 19, 254, 0.2);
             border: 1px solid rgba(0, 243, 255, 0.15); 
             text-align: center;
             width: 100%; 
@@ -162,12 +160,15 @@
             position: relative;
         }
         
-        .card-content { padding: 3rem 2rem; }
+        .card-content { padding: 2rem; }
 
+        /* AQUI ESTÁ A CORREÇÃO DO TAMANHO */
         .feature-img {
             width: 100%;
+            max-width: 350px; /* LIMITADOR DE LARGURA */
             height: auto;
             display: block;
+            margin: 0 auto; /* Centraliza a imagem */
             border-bottom: 1px solid rgba(0, 243, 255, 0.1);
         }
 
@@ -320,7 +321,7 @@
             document.getElementById('btn-' + lang).classList.add('active');
         }
 
-        // Default to English
+        // Padrão: Inglês
         setLanguage('en');
     </script>
 </body>
