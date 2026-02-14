@@ -44,8 +44,9 @@
             background-repeat: no-repeat;
         }
 
+        /* MUDANÇA AQUI: Deixei o fundo mais transparente (0.5 em vez de 0.85) */
         .hero-overlay {
-            background: linear-gradient(to bottom, rgba(5, 5, 16, 0.85), var(--bg-color));
+            background: linear-gradient(to bottom, rgba(5, 5, 16, 0.5), var(--bg-color));
             padding: 2rem 1rem 4rem 1rem;
             display: flex;
             flex-direction: column;
@@ -162,13 +163,13 @@
         
         .card-content { padding: 2rem; }
 
-        /* AQUI ESTÁ A CORREÇÃO DO TAMANHO */
+        /* CORREÇÃO APLICADA AQUI: Tamanho máximo e centralização */
         .feature-img {
             width: 100%;
-            max-width: 350px; /* LIMITADOR DE LARGURA */
+            max-width: 350px; /* TRAVA DE LARGURA */
             height: auto;
             display: block;
-            margin: 0 auto; /* Centraliza a imagem */
+            margin: 0 auto; /* CENTRALIZAR */
             border-bottom: 1px solid rgba(0, 243, 255, 0.1);
         }
 
