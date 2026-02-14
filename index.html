@@ -44,7 +44,6 @@
             background-repeat: no-repeat;
         }
 
-        /* MUDANÇA AQUI: Deixei o fundo mais transparente (0.5 em vez de 0.85) */
         .hero-overlay {
             background: linear-gradient(to bottom, rgba(5, 5, 16, 0.5), var(--bg-color));
             padding: 2rem 1rem 4rem 1rem;
@@ -139,16 +138,16 @@
 
         /* --- CONTAINER PRINCIPAL --- */
         .main-container { 
-            width: fit-content; 
-            min-width: 300px; 
-            max-width: 90%; 
+            width: 100%;
             padding: 1rem; 
             margin: -3rem auto 0 auto;
             position: relative;
             z-index: 10;
+            display: flex;
+            justify-content: center; /* Centraliza o card */
         }
 
-        /* --- PROJECT CARD --- */
+        /* --- PROJECT CARD (CORREÇÃO AQUI) --- */
         .project-card { 
             background: var(--card-bg); 
             padding: 0; 
@@ -157,20 +156,20 @@
             border: 1px solid rgba(0, 243, 255, 0.15); 
             text-align: center;
             width: 100%; 
-            overflow: hidden; 
+            max-width: 500px; /* TRAVA A LARGURA DO CARD, NÃO DA IMAGEM */
+            overflow: hidden; /* Garante que a imagem respeite as bordas arredondadas */
             position: relative;
         }
         
         .card-content { padding: 2rem; }
 
-        /* CORREÇÃO APLICADA AQUI: Tamanho máximo e centralização */
+        /* --- IMAGEM DO CARD (CORREÇÃO AQUI) --- */
         .feature-img {
-            width: 100%;
-            max-width: 350px; /* TRAVA DE LARGURA */
+            width: 100%; /* PREENCHE 100% DA LARGURA DO CARD */
             height: auto;
             display: block;
-            margin: 0 auto; /* CENTRALIZAR */
             border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+            /* Removido max-width e margins daqui */
         }
 
         .badge { 
@@ -274,13 +273,13 @@
                     </p>
             </div>
         </div>
-
-        <div class="footer">
-            &copy; 2026 Baronsud Mobile. All rights reserved.<br>
-            Contact: <a href="mailto:baronsud@proton.me">baronsud@proton.me</a> | 
-            <a href="privacy.html">Privacy Policy</a>
-        </div>
     </main>
+    
+    <div class="footer">
+        &copy; 2026 Baronsud Mobile. All rights reserved.<br>
+        Contact: <a href="mailto:baronsud@proton.me">baronsud@proton.me</a> | 
+        <a href="privacy.html">Privacy Policy</a>
+    </div>
 
     <script>
         const translations = {
