@@ -4,24 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baronsud Mobile</title>
-    
+   
     <link rel="icon" href="logo-bsud.png" type="image/png">
-
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
     <style>
         /* RESET & VARIAVEIS */
         * { box-sizing: border-box; }
-
         :root {
             /* PALETA CYBER DIGITAL */
-            --bg-color: #050510;       
-            --card-bg: #121225;        
-            --text-color: #e0f2fe;     
-            --accent-color: #00f3ff;   
-            --secondary-color: #d946ef; 
-            --gold-color: #facc15;     
+            --bg-color: #050510;
+            --card-bg: #121225;
+            --text-color: #e0f2fe;
+            --accent-color: #00f3ff;
+            --secondary-color: #d946ef;
+            --gold-color: #facc15;
         }
-
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-color);
@@ -33,7 +30,6 @@
             overflow-x: hidden;
             width: 100%;
         }
-
         /* --- HERO HEADER --- */
         .hero-header {
             position: relative;
@@ -43,7 +39,6 @@
             background-position: center;
             background-repeat: no-repeat;
         }
-
         .hero-overlay {
             background: linear-gradient(to bottom, rgba(5, 5, 16, 0.5), var(--bg-color));
             padding: 2rem 1rem 4rem 1rem;
@@ -53,7 +48,6 @@
             width: 100%;
             height: 100%;
         }
-
         /* --- ESTILOS GERAIS --- */
         .lang-switcher {
             margin-bottom: 2rem;
@@ -79,52 +73,48 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
         }
-        .lang-btn.active { 
-            opacity: 1; 
-            background: var(--accent-color); 
-            color: #050510; 
-            font-weight: 800; 
+        .lang-btn.active {
+            opacity: 1;
+            background: var(--accent-color);
+            color: #050510;
+            font-weight: 800;
             box-shadow: 0 0 15px var(--accent-color);
         }
-
-        .logo-container { 
-            margin-bottom: 0.5rem; 
+        .logo-container {
+            margin-bottom: 0.5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-
         .logo-img {
             width: 90px;
             height: auto;
-            border-radius: 50%; 
+            border-radius: 50%;
             border: 3px solid var(--accent-color);
             box-shadow: 0 0 25px rgba(0, 243, 255, 0.5);
             margin-bottom: 15px;
         }
-
-        .logo-main { 
-            font-size: 3.8rem; 
-            font-weight: 900; 
-            line-height: 0.9; 
-            margin: 0; 
+        .logo-main {
+            font-size: 3.8rem;
+            font-weight: 900;
+            line-height: 0.9;
+            margin: 0;
             color: #fff;
-            letter-spacing: -2px; 
+            letter-spacing: -2px;
             text-transform: uppercase;
             text-shadow: 0 0 20px rgba(0, 243, 255, 0.6);
         }
-        .logo-sub { 
-            font-size: 2.2rem; 
-            font-weight: 300; 
-            line-height: 1; 
-            margin: 0; 
-            opacity: 1; 
-            letter-spacing: 6px; 
-            text-transform: uppercase; 
+        .logo-sub {
+            font-size: 2.2rem;
+            font-weight: 300;
+            line-height: 1;
+            margin: 0;
+            opacity: 1;
+            letter-spacing: 6px;
+            text-transform: uppercase;
             color: var(--accent-color);
             text-shadow: 0 0 15px rgba(0, 243, 255, 0.8);
         }
-
         .slogan {
             font-size: 1.1rem;
             letter-spacing: 2px;
@@ -135,34 +125,31 @@
             text-transform: uppercase;
             text-shadow: 0 0 10px rgba(250, 204, 21, 0.5);
         }
-
         /* --- CONTAINER PRINCIPAL --- */
-        .main-container { 
+        .main-container {
             width: 100%;
-            padding: 1rem; 
+            padding: 1rem;
             margin: -3rem auto 0 auto;
             position: relative;
             z-index: 10;
             display: flex;
             justify-content: center; /* Centraliza o card */
         }
-
         /* --- PROJECT CARD (CORREÇÃO AQUI) --- */
-        .project-card { 
-            background: var(--card-bg); 
-            padding: 0; 
-            border-radius: 20px; 
+        .project-card {
+            background: var(--card-bg);
+            padding: 0;
+            border-radius: 20px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(188, 19, 254, 0.2);
-            border: 1px solid rgba(0, 243, 255, 0.15); 
+            border: 1px solid rgba(0, 243, 255, 0.15);
             text-align: center;
-            width: 100%; 
+            width: 100%;
             max-width: 500px; /* TRAVA A LARGURA DO CARD, NÃO DA IMAGEM */
             overflow: hidden; /* Garante que a imagem respeite as bordas arredondadas */
             position: relative;
         }
-        
+       
         .card-content { padding: 2rem; }
-
         /* --- IMAGEM DO CARD (CORREÇÃO AQUI) --- */
         .feature-img {
             width: 100%; /* PREENCHE 100% DA LARGURA DO CARD */
@@ -171,62 +158,58 @@
             border-bottom: 1px solid rgba(0, 243, 255, 0.1);
             /* Removido max-width e margins daqui */
         }
-
-        .badge { 
-            background: var(--gold-color); 
-            color: #050510; 
-            padding: 0.4rem 1.2rem; 
-            border-radius: 50px; 
-            font-weight: 800; 
-            font-size: 0.75rem; 
-            text-transform: uppercase; 
+        .badge {
+            background: var(--gold-color);
+            color: #050510;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            text-transform: uppercase;
             display: inline-block;
             letter-spacing: 1px;
             box-shadow: 0 0 15px rgba(251, 191, 36, 0.6);
         }
-
-        h3 { 
-            font-size: 2.2rem; 
-            margin-top: 1.5rem; 
-            margin-bottom: 1.5rem; 
+        h3 {
+            font-size: 2.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
             color: #fff;
             text-shadow: 0 0 10px rgba(255,255,255,0.4);
         }
-
-        .feature-list { 
-            list-style: none; 
-            padding: 0; 
-            margin: 1.5rem auto; 
-            display: inline-block; 
-            text-align: left; 
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem auto;
+            display: inline-block;
+            text-align: left;
         }
-        .feature-list li { 
-            margin-bottom: 15px; 
-            font-size: 1.1rem; 
-            opacity: 0.95; 
-            display: flex; 
-            align-items: flex-start; 
+        .feature-list li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            opacity: 0.95;
+            display: flex;
+            align-items: flex-start;
         }
-        .feature-list li::before { 
-            content: '>'; 
-            color: var(--secondary-color); 
-            font-weight: bold; 
-            margin-right: 12px; 
+        .feature-list li::before {
+            content: '>';
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-right: 12px;
             flex-shrink: 0;
             text-shadow: 0 0 8px var(--secondary-color);
         }
-
-        .footer { 
-            margin-top: 5rem; 
-            font-size: 0.8rem; 
-            opacity: 0.6; 
-            padding-bottom: 2rem; 
+        .footer {
+            margin-top: 5rem;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            padding-bottom: 2rem;
             line-height: 1.6;
             color: #a7f3d0;
         }
         a { color: var(--accent-color); text-decoration: none; font-weight: bold; transition: 0.3s; }
         a:hover { color: var(--secondary-color); text-shadow: 0 0 8px var(--secondary-color); }
-
+       
         @media (max-width: 600px) {
             .logo-main { font-size: 2.8rem; }
             .logo-sub { font-size: 1.8rem; }
@@ -239,76 +222,77 @@
     </style>
 </head>
 <body>
-
     <header class="hero-header">
         <div class="hero-overlay">
             <div class="lang-switcher">
                 <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">EN</button>
                 <button class="lang-btn" onclick="setLanguage('pt')" id="btn-pt">PT</button>
             </div>
-
             <div class="logo-container">
                 <img src="logo-bsud.png" alt="Baronsud Logo" class="logo-img">
                 <p class="logo-main">BARONSUD</p>
                 <p class="logo-sub">MOBILE</p>
             </div>
-            
+           
             <p class="slogan"></p>
         </div>
     </header>
-
     <main class="main-container">
-        
+       
         <div class="project-card">
             <img src="memorizeart.jpg" alt="Memorize Art Screenshot" class="feature-img">
-            
+           
             <div class="card-content">
                 <div><span id="badge" class="badge">Latest Release</span></div>
                 <h3>Memorize Art</h3>
-                
+               
                 <ul class="feature-list" id="description-list">
-                    </ul>
-
-                <p id="status" style="font-size: 1rem; margin-top: 35px; color: var(--accent-color); font-weight: 600; text-shadow: 0 0 10px rgba(0, 243, 255, 0.4); letter-spacing: 1px;">
-                    </p>
+                </ul>
+                <a href="https://play.google.com/store/apps/details?id=com.baronsud.memorizeart"
+   id="play-btn"
+   style="display: block; margin: 2rem auto; padding: 1rem 2.5rem; background: var(--accent-color); color: #050510; font-size: 1.1rem; font-weight: 800; border-radius: 50px; text-decoration: none; box-shadow: 0 0 25px rgba(0,243,255,0.6); transition: all 0.3s; max-width: 280px;"
+   target="_blank" rel="noopener">
+   Open in Google Play
+</a>
+               
+                <p id="status" style="font-size: 1rem; margin-top: 35px; color: var(--accent-color); font-weight: 600; text-shadow: 0 0 10px rgba(0, 243, 255, 0.4); letter-spacing: 1px;"></p>
             </div>
         </div>
     </main>
-    
+   
     <div class="footer">
         &copy; 2026 Baronsud Mobile. All rights reserved.<br>
-        Contact: <a href="mailto:baronsud@proton.me">baronsud@proton.me</a> | 
+        Contact: <a href="mailto:baronsud@proton.me">baronsud@proton.me</a> |
         <a href="privacy.html">Privacy Policy</a>
     </div>
-
     <script>
         const translations = {
-            'pt': { 
-                badge: "Lançamento", 
+            'pt': {
+                badge: "Lançamento",
                 features: [
                     "Desafio de memória para amantes da arte.",
                     "10 idiomas, 8 temas.",
                     "Design minimalista e eficiente.",
                     "Sem distrações desnecessárias."
                 ],
-                status: "Em breve na Google Play Store."
+                status: "Disponível agora.",
+                button: "Abrir no Google Play"
             },
-            'en': { 
-                badge: "Latest Release", 
+            'en': {
+                badge: "Latest Release",
                 features: [
                     "Memory challenge for art lovers.",
                     "10 languages, 8 themes.",
                     "Minimalist and efficient design.",
                     "No unnecessary distractions."
                 ],
-                status: "Coming soon to Google Play Store."
+                status: "Available now.",
+                button: "Open in Google Play"
             }
         };
-
         function setLanguage(lang) {
             document.getElementById('badge').innerText = translations[lang].badge;
             document.getElementById('status').innerHTML = `<i>${translations[lang].status}</i>`;
-
             const listContainer = document.getElementById('description-list');
             listContainer.innerHTML = '';
             translations[lang].features.forEach(text => {
@@ -316,11 +300,10 @@
                 li.innerText = text;
                 listContainer.appendChild(li);
             });
-
+            document.getElementById('play-btn').innerText = translations[lang].button;
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById('btn-' + lang).classList.add('active');
         }
-
         // Padrão: Inglês
         setLanguage('en');
     </script>
